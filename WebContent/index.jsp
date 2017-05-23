@@ -5,10 +5,8 @@
 <title>Insert title here</title>
 </head>
 <body>
-<h1> Please select your sample</h1>
-<ul>
-	<li><a href="pages/index.jsf">Page Selector</a>
-</ul>
-
+	<h1> 
+		<a href="pages/index.jsf">Page Selector</a>
+	</h1>
 </body>
 </html>
