@@ -12,10 +12,27 @@
 
 <h:body>
 	<div class="header">
-		<h1>Generic Header</h1>
-		<h2>
-			<ui:insert name="sectionTitle">Default Section Title</ui:insert>
-		</h2>
+		<div class="header_logo_lien" id="gauche">
+			<ui:insert name="header_logo_lien">
+				<!--Image ici  -->
+			</ui:insert>
+		</div>
+		<!--mettre le add ici  -->
+		<div class="loginHeader" id="droite">
+			<ui:insert name="loginHeader">
+				<h:outputLabel for="login">Login <span
+						class="requis">*</span>
+				</h:outputLabel>
+				<h:inputText class="field" id="login"
+					value="#{userDaoControler.user.login}" required="true" size="20"
+					maxlength="60" requiredMessage="#{msg['inscription.email']}">
+					<!-- <f:ajax event="blur" render="loginMessage" /> -->
+				</h:inputText>
+				<h:message id="loginMessage" for="login" errorClass="erreur" />
+				<br />
+
+			</ui:insert>
+		</div>
 	</div>
 
 	<div id="corebody" class="corebody">
