@@ -21,10 +21,10 @@ public class Ingrediant implements Serializable{
 		this.name = name;
 		this.description = description;
 	}
-	public String getname() {
+	public String getName() {
 		return name;
 	}
-	public void setname(String name) {
+	public void setName(String name) {
 		this.name = name;
 	}
 	public String getDescription() {

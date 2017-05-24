@@ -24,10 +24,13 @@ public class RecipeDaoControler implements Serializable{
 
 
 	public List<Ingrediant> getListIngrediants(Recipe recipe){
+		//For test
 		recipe.setName("riz cantonais");//For test
 		this.ingrediants = this.recipeDao.getListIngrediants(recipe);
 		return this.ingrediants;
 	}
+	
+	public void setRec
 	
 
 }

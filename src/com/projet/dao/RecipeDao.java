@@ -46,7 +46,7 @@ public class RecipeDao extends AbstractDao{
 		try {
 			while (resultSet.next()) {
 				Ingrediant ingrediant = new Ingrediant();
-				ingrediant.setname(resultSet.getString("name"));
+				ingrediant.setName(resultSet.getString("name"));
 				ingrediant.setDescription(resultSet.getString("description"));
 				ingrediants.add(ingrediant);
 			}

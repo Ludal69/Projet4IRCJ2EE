@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html">
+<ui:composition template="../templates/testTemplate.xhtml">
+	<h:form>
+		<ui:define name="corebody">
+			<table>
+				<ui:repeat value="#{recepDaoControler.getListIngrediants(recipe)}" var="ingrediant">
+					<tr>
+						<td>#{ingrediant.name}</td>
+					</tr>
+				</ui:repeat>
+			</table>
+		</ui:define>
+    </h:form>
+</ui:composition>
+
+</html> 
