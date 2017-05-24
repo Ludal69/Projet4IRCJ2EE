@@ -6,7 +6,7 @@
 	xmlns:ui="http://java.sun.com/jsf/facelets">
 
 <h:head>
-	<link href="../ressources/css/mystyle.css" rel="stylesheet" />
+	<link href="../ressources/css/ludal.css" rel="stylesheet" />
 </h:head>
 
 <h:body>
@@ -14,42 +14,28 @@
 		<div class="header_center">
 			<div class="header_logo">
 				<a class="header_logo_lien"> <img
-					src="../ressources/images/logo.jpg" alt="Logo" class="header_image" />
+					src="../ressources/images/Emergency.png" alt="Logo" class="header_image" />
 				</a>
 			</div>
 		</div>
-		<nav class="header_menu">
-		<div class="header_menu_center">
-			<ul class="header_menu_list">
-				<li class="header_menu_item"><a href="index.html"
-					class="header_menu_item_link_active">Accueil</a></li>
-			</ul>
-		</div>
-		</nav>
-	</div>
-
-
-	<header class="header">
-	<div class="header_center">
-		<div class="header_logo">
-			<a class="header_logo_lien"> <img
-				src="../ressources/images/logo.jpg" alt="Logo" class="header_image" />
-			</a>
+		<div class="header_menu">
+			<div class="header_menu_center">
+				<ul class="header_menu_list">
+					<li class="header_menu_item"><a href="splashScreen.xhtml"
+						class="header_menu_item_link_active">Accueil</a></li>
+				</ul>
+			</div>
 		</div>
 	</div>
-	<nav class="header_menu">
-	<div class="header_menu_center">
-		<ul class="header_menu_list">
-			<li class="header_menu_item"><a href="index.html"
-				class="header_menu_item_link_active">Accueil</a></li>
-		</ul>
-	</div>
-	</nav> </header>
 
 	<div id="corebody" class="corebody">
 		<ui:insert name="body">
-				Default Section Content
-			</ui:insert>
+			<div class="categorie">
+				<div class="categorie_center">
+					<h1 class="categorie_title">Accueil</h1>
+				</div>
+			</div>
+		</ui:insert>
 	</div>
 	<div id="footer" class="footer">
 		<h6>Copyright 2048</h6>
