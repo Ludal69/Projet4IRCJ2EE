@@ -3,7 +3,7 @@ package com.projet.controler.bean;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 
-import com.project.dao.UserDao;
+import com.projet.dao.UserDao;
 import com.projet.model.bean.User;
 
 @ManagedBean
