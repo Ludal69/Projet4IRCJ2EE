@@ -3,12 +3,12 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
 	xmlns:ui="http://java.sun.com/jsf/facelets">
 
 <h:head>
 	<link href="../ressources/css/mystyle.css" rel="stylesheet" />
 </h:head>
-
 
 <h:body>
 	<div class="header">
@@ -17,7 +17,7 @@
 			<ui:insert name="sectionTitle">Default Section Title</ui:insert>
 		</h2>
 	</div>
-	
+
 	<div id="corebody" class="corebody">
 		<ui:insert name="corebody">
 				Default Section Content
@@ -30,81 +30,3 @@
 </h:body>
 
 </html>
-
-<!-- <h:body>
-	<header class="header">
-	<div class="header_center">
-		<div class="header_logo">
-			<a class="header_logo_lien"> <img
-				src="../ressources/images/logo.jpg" alt="Logo" class="header_image" />
-			</a>
-		</div>
-	</div>
-	<nav class="header_menu">
-	<div class="header_menu_center">
-		<ul class="header_menu_list">
-			<li class="header_menu_item"><a href="index.html"
-				class="header_menu_item_link_active">Accueil</a></li>
-		</ul>
-	</div>
-	</nav> 
-	</header>
-
-	<div id="corebody" class="corebody">
-		<ui:insert name="body">
-				Default Section Content
-			</ui:insert>
-	</div>
-	<div id="footer" class="footer">
-		<h6>Copyright 2048</h6>
-	</div>
-
-</h:body>
-
-</html>
-
-<header class="header">
-<div class="header_center">
-	<div class="header_logo">
-		<a href="index.html" class="header_logo_lien"> <img
-			src="img/ludal_logo.png" alt="Logo Ludal" class="header_image" />
-		</a>
-	</div>
-	<div class="header_social">
-		<div class="header_languages">
-			<a href="/taalkeuze/nl" class="header_languages_lien">
-			<img src="/img/nl.png" alt="nl" class="header_languages_image">
-			NL
-          </a>
-			<a href="/choisir-langue/fr" class="header_languages_lien">
-			<img src="/img/fr.png" alt="fr" class="header_languages_image">
-			FR
-          </a>
-		</div>
-		<br /> <br /> <a href="https://www.facebook.com/Ludal.Extradal"
-			class="header_social_lien" target="_blank"> <img
-			src="img/facebook.png" alt="Facebook" class="header_social_image"></a>
-		<a href="http://www.twitter.com" class="header_social_lien" target="_blank">
-          <img src="img/twitter.png" alt="Twitter" class="header_social_image">
-        </a>
-	</div>
-</div>
-<nav class="header_menu">
-<div class="header_menu_center">
-	<ul class="header_menu_list">
-		<li class="header_menu_item"><a href="index.html"
-			class="header_menu_item_link_active">Accueil</a></li>
-		<li class="header_menu_item"><a href="activities.html">Activités</a>
-		</li>
-		<li class="header_menu_item"><a href="photogallery.html">Galerie
-				photos</a></li>
-		<li class="header_menu_item"><a href="normes.html">Normes</a></li>
-		<li class="header_menu_item">
-            <a href="faq.html">FAQ</a>
-          </li>
-		<li class="header_menu_item"><a href="termsandconditions.html">Conditions
-				générales</a></li>
-		<li class="header_menu_item"><a href="contact.html">Contact</a></li>
-	</ul>
-</div>
-</nav> </header> -->
