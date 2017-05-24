@@ -7,13 +7,13 @@
     padding: 0;
 } */
 /* HEADER */
-div.header{
-    position: fixed;
-    left: 0;
-    right: 0;
-    height: 80px;
-    line-height: 80px;
-    background-color: #222222;
+.header{
+/*     position: fixed; */
+/*     left: 0; */
+/*     right: 0; */
+/*     height: 80px; */
+/*     line-height: 80px; */
+     background-color: red; 
 }
 
 /* Coremenu*/
@@ -21,8 +21,8 @@ div.header{
     margin: 50px;
     height: 950px;
     clear: both;
-    background-color: red;
-    color: red
+    background-color: blue;
+    color: blue;
 }
 
 
@@ -32,7 +32,7 @@ div.header{
     width: 100%;
     line-height: 60px;
     bottom: 0;
-    color: #FFF;
+    color: green;
     height: 120px;
     text-align: center;
     background-color: #222222;
