@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html">
+<ui:composition template="../templates/MyTemplate.xhtml">
+
+<ui:define name="corebody">
+   
+      <!-- <h:form id="formulaire">
+         <fieldset>
+         	<legend>Inscription</legend>
+	     	<h:outputLabel for="email">Adresse email <span class="requis">*</span></h:outputLabel>
+	        <h:inputText id="email" value="#{userDaoControler.user.email}" required="true" size="20" maxlength="60" requiredMessage="#{msg['inscription.email']}">
+	           <f:ajax event="blur" render="emailMessage" />
+	        </h:inputText>
+	        <h:message id="emailMessage" for="email" errorClass="erreur" />
+	        <br />
+	
+	        <h:outputLabel for="motdepasse">Mot de passe <span class="requis">*</span></h:outputLabel>
+	        <h:inputSecret id="motdepasse" value="#{userDaoControler.user.userDaoControler.user.pwd}" required="true" size="20" maxlength="20" requiredMessage="#{msg['inscription.motdepasse']}">
+	       	     <f:ajax event="blur" render="motDePasseMessage" />
+	        </h:inputSecret>
+	        <h:message id="motDePasseMessage" for="motdepasse" errorClass="erreur" />
+	        <br />
+	
+	        <h:outputLabel for="confirmation">Confirmation du mot de passe <span class="requis">*</span></h:outputLabel>
+	        <h:inputSecret id="confirmation" value="#{userDaoControler.user.userDaoControler.user.pwd}" required="true" size="20" maxlength="20" requiredMessage="#{msg['inscription.confirmation']}">
+	            <f:ajax event="blur" render="confirmationMessage" />
+	        </h:inputSecret>
+	        <h:message id="confirmationMessage" for="confirmation" errorClass="erreur" />
+	        <br />
+	
+	        <h:outputLabel for="nom">Nom d'utilisateur <span class="requis">*</span></h:outputLabel>
+	        <h:inputText id="nom" value="#{userDaoControler.user.login}" required="true" size="20" maxlength="20" requiredMessage="#{msg['inscription.nom']}">
+	             <f:ajax event="blur" render="nomMessage" />
+	        </h:inputText>
+	        <h:message id="nomMessage" for="nom" errorClass="erreur" />
+	        <br />
+	        
+	        <h:messages globalOnly="true" infoClass="info" />
+	
+	        <h:commandButton value="Inscription" action="#{userDaoControler.addUser}" styleClass="sansLabel">
+	            <f:ajax execute="@form" render="@form" />
+	        </h:commandButton>
+	        <br />
+          </fieldset>
+        </h:form> -->
+        
+        <h1>TEST</h1>
+    
+    </ui:define>
+    		
+    
+</ui:composition>
+</html>
