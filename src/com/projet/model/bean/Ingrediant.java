@@ -9,9 +9,7 @@ import javax.faces.bean.ManagedBean;
 @ApplicationScoped
 
 public class Ingrediant implements Serializable{
-	/**
-	 * 
-	 */
+	
 	private static final long serialVersionUID = 1L;
 	private String name;
 	private String description;
@@ -35,5 +33,10 @@ public class Ingrediant implements Serializable{
 	public void setDescription(String description) {
 		this.description = description;
 	}
+	public static long getSerialversionuid() {
+		return serialVersionUID;
+	}
+	
+	
 
 }
