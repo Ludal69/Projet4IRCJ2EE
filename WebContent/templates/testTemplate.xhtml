@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+
+<h:head>
+	<link href="../ressources/css/mystyle.css" rel="stylesheet" />
+</h:head>
+
+<h:body>
+	<div class="header">
+		<div class="header_center">
+			<div class="header_logo">
+				<a class="header_logo_lien"> <img
+					src="../ressources/images/logo.jpg" alt="Logo" class="header_image" />
+				</a>
+			</div>
+		</div>
+		<nav class="header_menu">
+		<div class="header_menu_center">
+			<ul class="header_menu_list">
+				<li class="header_menu_item"><a href="index.html"
+					class="header_menu_item_link_active">Accueil</a></li>
+			</ul>
+		</div>
+		</nav>
+	</div>
+
+
+	<header class="header">
+	<div class="header_center">
+		<div class="header_logo">
+			<a class="header_logo_lien"> <img
+				src="../ressources/images/logo.jpg" alt="Logo" class="header_image" />
+			</a>
+		</div>
+	</div>
+	<nav class="header_menu">
+	<div class="header_menu_center">
+		<ul class="header_menu_list">
+			<li class="header_menu_item"><a href="index.html"
+				class="header_menu_item_link_active">Accueil</a></li>
+		</ul>
+	</div>
+	</nav> </header>
+
+	<div id="corebody" class="corebody">
+		<ui:insert name="body">
+				Default Section Content
+			</ui:insert>
+	</div>
+	<div id="footer" class="footer">
+		<h6>Copyright 2048</h6>
+	</div>
+
+</h:body>
+
+</html>
