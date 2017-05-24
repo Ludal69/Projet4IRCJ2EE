@@ -6,51 +6,69 @@
 
 <ui:define name="corebody">
    
-      <h:form id="formulaire">
+      <h:form id="registrationForm">
          <fieldset>
-         	<legend>Inscription</legend>
+         	<legend>Registration</legend>
+         	
+         	<h:outputLabel for="firstName">First Name <span class="requis">*</span></h:outputLabel>
+	        <h:inputText class="field" id="firstName" value="#{userDaoControler.user.firstName}" required="true" size="20" maxlength="60" requiredMessage="#{msg['inscription.email']}">
+	           <!-- <f:ajax event="blur" render="firstNameMessage" /> -->
+	        </h:inputText>
+	        <h:message id="firstNameMessage" for="firstName" errorClass="erreur" />
+	        <br />
+	        
+	        <h:outputLabel for="lastName">Last Name <span class="requis">*</span></h:outputLabel>
+	        <h:inputText class="field" id="lastName" value="#{userDaoControler.user.lastName}" required="true" size="20" maxlength="60" requiredMessage="#{msg['inscription.email']}">
+	           <!-- <f:ajax event="blur" render="lastNameMessage" /> -->
+	        </h:inputText>
+	        <h:message id="lastNameMessage" for="lastName" errorClass="erreur" />
+	        <br />
+	        
+	        <h:outputLabel for="age">Age <span class="requis">*</span></h:outputLabel>
+	        <h:inputText class="field" id="age" value="#{userDaoControler.user.age}" required="true" size="20" maxlength="60" requiredMessage="#{msg['inscription.email']}">
+	           <!-- <f:ajax event="blur" render="ageMessage" /> -->
+	        </h:inputText>
+	        <h:message id="ageMessage" for="age" errorClass="erreur" />
+	        <br />
+         	
 	     	<h:outputLabel for="email">Adresse email <span class="requis">*</span></h:outputLabel>
-	        <h:inputText id="email" value="#{userDaoControler.user.email}" required="true" size="20" maxlength="60" requiredMessage="#{msg['inscription.email']}">
-	           <f:ajax event="blur" render="emailMessage" />
+	        <h:inputText class="field" id="email" value="#{userDaoControler.user.email}" required="true" size="20" maxlength="60" requiredMessage="#{msg['inscription.email']}">
+	           <!-- <f:ajax event="blur" render="emailMessage" /> -->
 	        </h:inputText>
 	        <h:message id="emailMessage" for="email" errorClass="erreur" />
 	        <br />
+	        
+	        <h:outputLabel for="login">Login <span class="requis">*</span></h:outputLabel>
+	        <h:inputText class="field" id="login" value="#{userDaoControler.user.login}" required="true" size="20" maxlength="60" requiredMessage="#{msg['inscription.email']}">
+	           <!-- <f:ajax event="blur" render="loginMessage" /> -->
+	        </h:inputText>
+	        <h:message id="loginMessage" for="login" errorClass="erreur" />
+	        <br />
 	
 	        <h:outputLabel for="motdepasse">Mot de passe <span class="requis">*</span></h:outputLabel>
-	        <h:inputSecret id="motdepasse" value="#{userDaoControler.user.userDaoControler.user.pwd}" required="true" size="20" maxlength="20" requiredMessage="#{msg['inscription.motdepasse']}">
-	       	     <f:ajax event="blur" render="motDePasseMessage" />
+	        <h:inputSecret class="field" id="motdepasse" value="#{userDaoControler.user.pwd}" required="true" size="20" maxlength="20" requiredMessage="#{msg['inscription.motdepasse']}">
+	       	    <!--  <f:ajax event="blur" render="motDePasseMessage" /> -->
 	        </h:inputSecret>
 	        <h:message id="motDePasseMessage" for="motdepasse" errorClass="erreur" />
 	        <br />
 	
 	        <h:outputLabel for="confirmation">Confirmation du mot de passe <span class="requis">*</span></h:outputLabel>
-	        <h:inputSecret id="confirmation" value="#{userDaoControler.user.userDaoControler.user.pwd}" required="true" size="20" maxlength="20" requiredMessage="#{msg['inscription.confirmation']}">
-	            <f:ajax event="blur" render="confirmationMessage" />
+	        <h:inputSecret class="field" id="confirmation" value="#{userDaoControler.user.pwd}" required="true" size="20" maxlength="20" requiredMessage="#{msg['inscription.confirmation']}">
+	            <!-- <f:ajax event="blur" render="confirmationMessage" /> -->
 	        </h:inputSecret>
 	        <h:message id="confirmationMessage" for="confirmation" errorClass="erreur" />
-	        <br />
-	
-	        <h:outputLabel for="nom">Nom d'utilisateur <span class="requis">*</span></h:outputLabel>
-	        <h:inputText id="nom" value="#{userDaoControler.user.login}" required="true" size="20" maxlength="20" requiredMessage="#{msg['inscription.nom']}">
-	             <f:ajax event="blur" render="nomMessage" />
-	        </h:inputText>
-	        <h:message id="nomMessage" for="nom" errorClass="erreur" />
 	        <br />
 	        
 	        <h:messages globalOnly="true" infoClass="info" />
 	
 	        <h:commandButton value="Inscription" action="#{userDaoControler.addUser()}" styleClass="sansLabel">
-	            <f:ajax execute="@form" render="@form" />
+	            <!-- <f:ajax execute="@form" render="@form" /> -->
 	        </h:commandButton>
 	        <br />
           </fieldset>
         </h:form>
-        
-        <h1>TEST</h1>
-    xmlns:f="http://java.sun.com/jsf/core">
     
     </ui:define>
     		
-    
 </ui:composition>
 </html>

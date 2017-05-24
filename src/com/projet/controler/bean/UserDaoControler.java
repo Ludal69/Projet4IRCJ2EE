@@ -8,6 +8,7 @@ import javax.faces.bean.SessionScoped;
 import com.projet.dao.UserDao;
 import com.projet.model.bean.User;
 
+@SuppressWarnings("serial")
 @ManagedBean
 @SessionScoped
 
@@ -17,10 +18,12 @@ public class UserDaoControler implements Serializable{
 	
 	public UserDaoControler(){
 		this.userDao= new UserDao();
+		this.user = new User();
 	}
 	
-	public void addUser(){
+	public String addUser(){
 		this.userDao.addUser(this.user);
+		return "splashScreen.jsf";
 	}
 
 	public User getUser() {

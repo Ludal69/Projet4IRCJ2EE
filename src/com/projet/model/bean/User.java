@@ -10,13 +10,13 @@ import javax.faces.bean.SessionScoped;
 
 public class User implements Serializable {
 	private static final long serialVersionUID = 1L;
-	private String login;
-	private String pwd;
-	private String firstName;
-	private String lastName;
-	private int age;
-	private String email;
-	private boolean isConnected;
+	private String login = "";
+	private String pwd = "";
+	private String firstName = "";
+	private String lastName = "";
+	private int age = 0;
+	private String email = "";
+	private boolean isConnected =false;
 	
 	public User() {
 	}
