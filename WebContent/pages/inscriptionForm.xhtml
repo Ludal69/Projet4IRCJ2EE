@@ -6,7 +6,7 @@
 
 <ui:define name="corebody">
    
-      <!-- <h:form id="formulaire">
+      <h:form id="formulaire">
          <fieldset>
          	<legend>Inscription</legend>
 	     	<h:outputLabel for="email">Adresse email <span class="requis">*</span></h:outputLabel>
@@ -39,14 +39,15 @@
 	        
 	        <h:messages globalOnly="true" infoClass="info" />
 	
-	        <h:commandButton value="Inscription" action="#{userDaoControler.addUser}" styleClass="sansLabel">
+	        <h:commandButton value="Inscription" action="#{userDaoControler.addUser()}" styleClass="sansLabel">
 	            <f:ajax execute="@form" render="@form" />
 	        </h:commandButton>
 	        <br />
           </fieldset>
-        </h:form> -->
+        </h:form>
         
         <h1>TEST</h1>
+    xmlns:f="http://java.sun.com/jsf/core">
     
     </ui:define>
     		

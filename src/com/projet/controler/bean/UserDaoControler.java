@@ -1,5 +1,7 @@
 package com.projet.controler.bean;
 
+import java.io.Serializable;
+
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 
@@ -9,7 +11,7 @@ import com.projet.model.bean.User;
 @ManagedBean
 @SessionScoped
 
-public class UserDaoControler {
+public class UserDaoControler implements Serializable{
 	private User user;
 	private UserDao userDao;
 	
@@ -20,5 +22,15 @@ public class UserDaoControler {
 	public void addUser(){
 		this.userDao.addUser(this.user);
 	}
+
+	public User getUser() {
+		return user;
+	}
+
+	public void setUser(User user) {
+		this.user = user;
+	}
+	
+	
 
 }
