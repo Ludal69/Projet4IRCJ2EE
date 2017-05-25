@@ -16,7 +16,7 @@ public class User implements Serializable {
 	private String lastName = "";
 	private int age = 0;
 	private String email = "";
-	private boolean isConnected =false;
+	private boolean isConnected = false;
 	
 	public User() {
 	}
