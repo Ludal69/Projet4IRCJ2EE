@@ -8,15 +8,14 @@ import java.util.List;
 import com.projet.model.bean.Ingrediant;
 import com.projet.model.bean.Recipe;
 
-public class IngrediantsDao extends AbstractDao{
+public class RecipesDao extends AbstractDao{
 	
-	public IngrediantsDao(){
+	public RecipesDao(){
 		super();
 	}
 	
-	public List<Ingrediant> getListIngrediants(Recipe recipe){
-		
-		List<Ingrediant> ingrediants = new ArrayList<Ingrediant>();
+	public List<Recipe> getListRecipes(){
+		List<Recipe> recipes = new ArrayList<Recipe>();
 		ResultSet resultSet = null;
 		
 		try {
@@ -26,10 +25,7 @@ public class IngrediantsDao extends AbstractDao{
 			java.sql.Statement query = cnx.createStatement();
 
 			// Cr�ation du contenu de la requ�te a �x�cuter
-			String sql ="SELECT i.ingrediant_id, i.name, i.description FROM `recipelinkingrediant` AS l "+
-					"JOIN ingrediant AS i ON l.ingrediant_id=i.ingrediant_id "+
-					"JOIN recipe AS r ON l.recipe_id=r.recipe_id "+
-					"WHERE r.name LIKE 'riz cantonais';";
+			String sql ="SELECT * FROM `recipe`";
 
 			// Ex�cution de la requ�te de modification
 			//query.executeUpdate(sql);
@@ -37,10 +33,10 @@ public class IngrediantsDao extends AbstractDao{
 			resultSet = query.executeQuery(sql);
 			
 			while (resultSet.next()) {
-				Ingrediant ingrediant = new Ingrediant();
-				ingrediant.setName(resultSet.getString("name"));
-				ingrediant.setDescription(resultSet.getString("description"));
-				ingrediants.add(ingrediant);
+				Recipe recipe = new Recipe();
+				recipe.setName(resultSet.getString("name"));
+				recipe.setDescription(resultSet.getString("description"));
+				recipes.add(recipe);
 			}
 
 //			cnx.commit();
@@ -51,7 +47,7 @@ public class IngrediantsDao extends AbstractDao{
 			e.printStackTrace();
 		}
 		
-		return ingrediants;
+		return recipes;
 	}
-
 }
+

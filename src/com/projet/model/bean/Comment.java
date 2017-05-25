@@ -9,7 +9,7 @@ import javax.faces.bean.ManagedBean;
 
 public class Comment implements Serializable{
 	private static final long serialVersionUID = 1L;
-	private String content;
+	private String content = "";
 	private long user_id;
 	private long recipe_id;
 	

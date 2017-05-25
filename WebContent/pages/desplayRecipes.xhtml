@@ -1,15 +1,31 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:ui="http://java.sun.com/jsf/facelets"
-	xmlns:h="http://java.sun.com/jsf/html">
-<ui:composition template="../templates/testTemplate.xhtml">
-	<ui:define name="corebody">
-		<ul>
-			<ui:repeat value="#{IngrediantsDaoControler.ingrediants}" var="ingrediant">
-					<li>#{ingrediant.name}</li>	
-			</ui:repeat>
-		</ul>
-	</ui:define>
-</ui:composition>
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f = "http://java.sun.com/jsf/core">
+<ui:composition template="../templates/MyTemplate.xhtml">
 
-</html> 
+	<ui:define name="corebody">
+	<h:form>
+		<h:selectOneMenu value="#{ingrediantsDaoControler.recipe}">
+			<ui:repeat value="#{recipesDaoControler.recipes}" var="recipe">
+	    		<f:selectItem itemValue="#{recipe.name}" />
+	    	</ui:repeat>
+		</h:selectOneMenu>
+		
+		     <ul>
+				<ui:repeat value="#{ingrediantsDaoControler.ingrediants}" var="ingrediant">
+						<li><h:outputText value="#{ingrediant.name}"/></li>
+							<h:inputText class="field" id="firstName" value="#{ingrediant.name}" required="true" size="20" maxlength="60" requiredMessage="#{msg['inscription.email']}">
+		       				 </h:inputText>
+				</ui:repeat>
+			</ul>
+		</h:form>
+	   <h1>TEST</h1>
+      
+    
+    </ui:define>
+    		
+</ui:composition>
+</html>
+

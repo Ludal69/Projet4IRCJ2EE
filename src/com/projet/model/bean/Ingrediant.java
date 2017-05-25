@@ -11,8 +11,8 @@ import javax.faces.bean.SessionScoped;
 public class Ingrediant implements Serializable{
 	
 	private static final long serialVersionUID = 1L;
-	private String name;
-	private String description;
+	private String name = "Test";
+	private String description = "";
 	
 	public Ingrediant() {
 	}
