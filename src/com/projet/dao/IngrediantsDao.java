@@ -8,7 +8,7 @@ import java.util.List;
 import com.projet.model.bean.Ingrediant;
 import com.projet.model.bean.Recipe;
 
-public class RecipeDao extends AbstractDao{
+public class IngrediantsDao extends AbstractDao{
 	
 	public List<Ingrediant> getListIngrediants(Recipe recipe){
 		
@@ -22,13 +22,10 @@ public class RecipeDao extends AbstractDao{
 			java.sql.Statement query = cnx.createStatement();
 
 			// Cr�ation du contenu de la requ�te a �x�cuter
-//			String sql = "INSERT INTO `"+this.DB_TABLE_NAME+"`.`user` (`firstname`,`lastname`,`login`,`pwd`,`email`,`age`)"
-//					+ " VALUES ('"+user.getFirstName()+"','"+user.getLastName()+"','"+user.getLogin()+"','"+user.getPwd()+"','"+user.getEmail()+"','"+user.getAge()+"');";
-			
-			String sql ="SELECT i.ingrediant_id, i.name, i.description FROM `recipelinkingrediant` AS l"+
-					"JOIN ingrediant AS i ON l.ingrediant_id=i.ingrediant_id"+
-					"JOIN recipe AS r ON l.recipe_id=r.recipe_id"+
-					"WHERE r.name LIKE '"+recipe.getName()+"'";
+			String sql ="SELECT i.ingrediant_id, i.name, i.description FROM `recipelinkingrediant` AS l "+
+					"JOIN ingrediant AS i ON l.ingrediant_id=i.ingrediant_id "+
+					"JOIN recipe AS r ON l.recipe_id=r.recipe_id "+
+					"WHERE r.name LIKE 'riz cantonais';";
 
 			// Ex�cution de la requ�te de modification
 			//query.executeUpdate(sql);
