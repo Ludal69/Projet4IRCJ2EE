@@ -4,13 +4,12 @@ import java.io.Serializable;
 
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
-
+/*
 @ManagedBean
 @SessionScoped
-
-public class Ingrediant implements Serializable{
+*/
+public class Ingrediant{
 	
-	private static final long serialVersionUID = 1L;
 	private String name = "";
 	private String description = "";
 	
@@ -33,9 +32,7 @@ public class Ingrediant implements Serializable{
 	public void setDescription(String description) {
 		this.description = description;
 	}
-	public static long getSerialversionuid() {
-		return serialVersionUID;
-	}
+	
 	
 	
 
