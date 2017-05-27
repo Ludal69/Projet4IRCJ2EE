@@ -7,20 +7,24 @@
 
 	<ui:define name="corebody">
 	<h:form>
-		<h:selectOneMenu value="#{ingrediantsDaoControler.recipe}">
-			<ui:repeat value="#{recipesDaoControler.recipes}" var="recipe">
-	    		<f:selectItem itemValue="#{recipe.name}" />
-	    	</ui:repeat>
-		</h:selectOneMenu>
-		
-		     <ul>
-				<ui:repeat value="#{ingrediantsDaoControler.ingrediants}" var="ingrediant">
-						<li><h:outputText value="#{ingrediant.name}"/></li>
-							<h:inputText class="field" id="firstName" value="#{ingrediant.name}" required="true" size="20" maxlength="60" requiredMessage="#{msg['inscription.email']}">
-		       				 </h:inputText>
-				</ui:repeat>
-			</ul>
-		</h:form>
+		<fieldset>
+			<legend>Recipe</legend>
+			<h:selectOneMenu value="#{ingrediantsDaoControler.recipe}">
+				<ui:repeat value="#{recipesDaoControler.recipes}" var="recipe">
+		    		<f:selectItem itemValue="#{recipe.name}" />
+		    	</ui:repeat>
+			</h:selectOneMenu>
+			
+			     <ul>
+					<ui:repeat value="#{ingrediantsDaoControler.ingrediants}" var="ingrediant">
+							<li><h:outputText value="#{ingrediant.name}"/></li>
+					</ui:repeat>
+				</ul>
+				<h:commandButton value="Print recipe" action="desplayRecipes.jsf" styleClass="sansLabel">
+	            <!-- <f:ajax execute="@form" render="@form" /> -->
+	        </h:commandButton>
+		</fieldset>
+	</h:form>
 	   <h1>TEST</h1>
       
     

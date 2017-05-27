@@ -15,15 +15,13 @@ public class Recipe implements Serializable{
 	private static final long serialVersionUID = 1L;
 	private String name = "";
 	private String description = "";
-	private List<Ingrediant> ingrediants;
 	public Recipe() {
 	
 	}
 	
-	public Recipe(String name, String description, List<Ingrediant> ingrediants) {
+	public Recipe(String name, String description) {
 		this.name = name;
 		this.description = description;
-		this.ingrediants = ingrediants;
 	}
 
 	public String getName() {
@@ -40,14 +38,6 @@ public class Recipe implements Serializable{
 
 	public void setDescription(String description) {
 		this.description = description;
-	}
-
-	public List<Ingrediant> getIngrediants() {
-		return ingrediants;
-	}
-
-	public void setIngrediants(List<Ingrediant> ingrediants) {
-		this.ingrediants = ingrediants;
 	}
 
 	public static long getSerialversionuid() {
