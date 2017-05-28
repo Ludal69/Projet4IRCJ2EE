@@ -15,10 +15,14 @@
 		    	<f:selectItems value="#{recipesDaoControler.recipes}" var="recipe" itemLabel="#{recipe.name}" itemValue="#{recipe}" />
 			</h:selectOneMenu>
 			<br></br>
-			
-			<h:commandButton value="Desplay recipe" hrer="desplayRecipes.jsf" action="desplayRecipes.jsf" styleClass="button">
-            <!-- <f:ajax execute="@form" render="@form" /> -->
-	        </h:commandButton>
+			<ul>
+				<ui:repeat value="#{ingrediantsDaoControler.ingrediants}" var="ingrediant">
+						<li><h:outputText value="#{ingrediant.name}"/></li>
+				</ui:repeat>
+			</ul>
+				<h:button value="Desplay recipe" outcome="desplayRecipes.jsf" styleClass="button">
+	            <!-- <f:ajax execute="@form" render="@form" /> -->
+		        </h:button>
 		</fieldset>
 	</h:form>
 	   <h1>TEST</h1>

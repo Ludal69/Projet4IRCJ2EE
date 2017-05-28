@@ -4,8 +4,10 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.annotation.PostConstruct;
 import javax.faces.bean.ApplicationScoped;
 import javax.faces.bean.ManagedBean;
+import javax.faces.bean.RequestScoped;
 import javax.faces.bean.SessionScoped;
 
 import com.projet.dao.IngrediantsDao;
@@ -29,15 +31,11 @@ public class IngrediantsDaoControler implements Serializable{
 		this.ingrediants = new ArrayList<Ingrediant>();
 	}
 
-
 	public List<Ingrediant> getIngrediants(){
 		//For test
-		//this.recipe.setName("riz cantonais");//For test
+		//this.recipe.setName("Steak frites");//For test
 		System.out.println(this.recipe.getName());
 		this.ingrediants = this.ingrediantsDao.getListIngrediants(this.recipe);
-		for(int i=0;i<4;i++){
-			System.out.println(this.ingrediants.get(i).getName());
-		}
 		return this.ingrediants;
 	}
 
