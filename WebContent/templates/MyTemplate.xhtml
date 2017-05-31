@@ -12,69 +12,67 @@
 </h:head>
 
 <h:body>
-	<div class="header">
-		<div class="header_logo_lien" id="gauche">
-			<ui:insert name="header_logo_lien">
-			</ui:insert>
-		</div>
-		<div class="loginHeader" id="droite">
-			<ui:insert name="loginHeader">
-				<h:outputLabel for="login">Login <span
-						class="requis" style="padding-right: 5px">*</span>
-				</h:outputLabel>
-				<h:inputText class="field" id="login"
-					value="#{userDaoControler.user.login}" required="true" size="20"
-					maxlength="60" requiredMessage="#{msg['inscription.email']}">
-					<!-- <f:ajax event="blur" render="loginMessage" /> -->
-					<f:validator validatorId="validators.login" class="validator" />
-				</h:inputText>
-				<h:message id="loginMessage" for="login" errorClass="erreur" />
-				<br />
+	<h:form id="template">
 
-				<!--PASSWORD  -->
-				<h:outputLabel for="password">Password <span
-						class="requis">*</span>
-				</h:outputLabel>
-				<h:inputSecret class="field" id="password"
-					value="#{userDaoControler.user.pwd}" required="true" size="20"
-					maxlength="50">
-					<f:validator validatorId="confirmPasswordValidator" />
-				</h:inputSecret>
-				<h:message id="m_password" for="password" errorClass="erreur" />
-				<br />
-				<h:form id="connectButton">
+		<div class="header">
+			<div class="header_logo_lien" id="gauche">
+				<ui:insert name="header_logo_lien">
+				</ui:insert>
+			</div>
+			<div class="loginHeader" id="droite">
+				<ui:insert name="loginHeader">
+					<h:outputLabel for="login">Login <span
+							class="requis" style="padding-right: 23px">*</span>
+					</h:outputLabel>
+					<h:inputText class="field" id="login"
+						value="#{userDaoControler.user.login}" required="true" size="20"
+						maxlength="60" requiredMessage="#{msg['inscription.email']}">
+						<!-- <f:ajax event="blur" render="loginMessage" /> -->
+						<f:validator validatorId="validators.login" class="validator" />
+					</h:inputText>
+					<h:message id="loginMessage" for="login" errorClass="erreur" />
+					<br />
+
+					<!--PASSWORD  -->
+					<h:outputLabel for="password">Password <span
+							class="requis">*</span>
+					</h:outputLabel>
+					<h:inputSecret class="field" id="password"
+						value="#{userDaoControler.user.pwd}" required="true" size="20"
+						maxlength="50">
+						<f:validator validatorId="confirmPasswordValidator" />
+					</h:inputSecret>
+					<h:message id="m_password" for="password" errorClass="erreur" />
+					<br />
 					<!--Ici ajouter action pour ajouter user  -->
 					<h:commandButton action="#{userDaoControler.addUser()}"
 						image="../ressources/images/add.png" alt="add" class="button"
 						style="float: right;" />
-				</h:form>
-				<!--PASSWORD  -->
+					<!--PASSWORD  -->
 
-			</ui:insert>
-		</div>
-		<div class="becomeMember" id="droite">
-			<ui:insert name="becomeMember">
-				<h:form id="addUser">
+				</ui:insert>
+			</div>
+			<div class="becomeMember" id="droite">
+				<ui:insert name="becomeMember">
 					<!--Ici ajouter action pour ajouter user  -->
 					<h:commandButton action="#{userDaoControler.addUser()}"
 						image="../ressources/images/add.png" alt="add" class="button" />
 					<h:outputText value="Become member"
 						style="vertical-align:10px; padding-right: 50px; padding-left: 10px; Font-Weight: Bold;" />
-				</h:form>
-			</ui:insert>
+				</ui:insert>
 
+			</div>
 		</div>
-	</div>
 
-	<div id="corebody" class="corebody">
-		<ui:insert name="corebody">
+		<div id="corebody" class="corebody">
+			<ui:insert name="corebody">
 				Default Section Content
 			</ui:insert>
-	</div>
-	<div id="footer" class="footer">
-		<h6>Copyright 2048</h6>
-	</div>
-
+		</div>
+		<div id="footer" class="footer">
+			<h6>Copyright 2048</h6>
+		</div>
+	</h:form>
 </h:body>
 
 </html>
