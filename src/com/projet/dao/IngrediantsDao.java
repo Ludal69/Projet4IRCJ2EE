@@ -14,7 +14,7 @@ public class IngrediantsDao extends AbstractDao{
 		super();
 	}
 	
-	public List<Ingrediant> getListIngrediants(Recipe recipe){
+	public List<Ingrediant> getListIngrediants(String recipeName){
 		
 		List<Ingrediant> ingrediants = new ArrayList<Ingrediant>();
 		ResultSet resultSet = null;
@@ -29,7 +29,7 @@ public class IngrediantsDao extends AbstractDao{
 			String sql ="SELECT i.ingrediant_id, i.name, i.description FROM `recipelinkingrediant` AS l "+
 					"JOIN ingrediant AS i ON l.ingrediant_id=i.ingrediant_id "+
 					"JOIN recipe AS r ON l.recipe_id=r.recipe_id "+
-					"WHERE r.name LIKE '"+recipe.getName()+"';";
+					"WHERE r.name LIKE '"+recipeName+"';";
 
 			// Ex�cution de la requ�te de modification
 			//query.executeUpdate(sql);
