@@ -6,12 +6,15 @@ import java.util.List;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 
-/*
+
 @ManagedBean
 @SessionScoped
-*/
-public class Recipe{
+public class Recipe implements Serializable{
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private String name = "";
 	private String description = "";
 	public Recipe() {

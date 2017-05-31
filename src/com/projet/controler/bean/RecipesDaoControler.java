@@ -12,11 +12,15 @@ import javax.faces.bean.SessionScoped;
 import com.projet.dao.RecipesDao;
 import com.projet.model.bean.Recipe;
 
-@SuppressWarnings("serial")
+
 @ManagedBean
-@ApplicationScoped
+@SessionScoped
 
 public class RecipesDaoControler implements Serializable{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private RecipesDao recipesDao;
 	private List<Recipe> recipes;
 	

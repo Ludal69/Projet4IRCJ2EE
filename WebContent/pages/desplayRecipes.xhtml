@@ -7,17 +7,34 @@
 
 	<ui:define name="corebody">
 	<h:form>
-		<fieldset>
+	<!-- <h:outputText value="#{recipe.name}"/> -->
+		 <fieldset>
 			<legend>Recipe</legend>
 
-		    <ul>
-				<ui:repeat value="#{ingrediantsDaoControler.ingrediants}" var="ingrediant">
-						<li><h:outputText value="#{ingrediant.name}"/></li>
-				</ui:repeat>
-			</ul>
+		    
+			
+			<table style="width:100%">
+			  	<tr>
+				    <th>Recipe</th>
+				    <th>Ingredients</th> 
+			  	</tr>
+			  	<ui:repeat value="recipesDaoControler.recipes" var="recipe">
+			  		<tr>
+				  		<td><h:outputText value="#{recipe.name}"/></td>
+				  		<td>
+				  			<ul>
+					  			<ui:repeat value="#{ingrediantsDaoControler.getIngrediants(recipe.name)}" var="ingredient">
+					  				<li>#{ingredient.name}</li>
+					  			</ui:repeat>
+					  		</ul>
+				  		</td>
+			  		</tr>
+			  	</ui:repeat>
+			  	
+			</table>
 			
 			<h:button value="Back to selection" outcome="selectRecipes.jsf" styleClass="button">
-            <!-- <f:ajax execute="@form" render="@form" /> -->
+            <f:ajax execute="@form" render="@form" />
 	        </h:button>
 		</fieldset>
 	</h:form>

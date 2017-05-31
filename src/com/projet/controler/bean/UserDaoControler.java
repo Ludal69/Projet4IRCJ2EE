@@ -8,11 +8,16 @@ import javax.faces.bean.SessionScoped;
 import com.projet.dao.UserDao;
 import com.projet.model.bean.User;
 
-@SuppressWarnings("serial")
+
 @ManagedBean(name="userDaoControler")
 @SessionScoped
+
 public class UserDaoControler implements Serializable {
-    private User user;
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	private User user;
     private UserDao userDao;
 
     public UserDaoControler() {
