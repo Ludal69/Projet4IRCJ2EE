@@ -9,6 +9,10 @@ import javax.faces.bean.SessionScoped;
 @SessionScoped
 
 public class ConfirmPassword implements Serializable{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private String submittedValue;
 	private String confirmedValue;
 	

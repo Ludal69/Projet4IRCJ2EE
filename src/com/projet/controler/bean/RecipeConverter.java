@@ -19,10 +19,10 @@ public class RecipeConverter implements Converter {
 	@Override
 	public Object getAsObject(FacesContext ctx, UIComponent arg1, String recipeName) {
 		System.out.println(recipeName);
-		ValueExpression vex =
-                ctx.getApplication().getExpressionFactory()
-                        .createValueExpression(ctx.getELContext(),
-                                "#{recepiesDaoControler}", RecipesDaoControler.class);
+//		ValueExpression vex =
+//                ctx.getApplication().getExpressionFactory()
+//                        .createValueExpression(ctx.getELContext(),
+//                                "#{recepiesDaoControler}", RecipesDaoControler.class);
 		 Map<String, Object> context = FacesContext.getCurrentInstance().getExternalContext().getApplicationMap();
 		 RecipesDaoControler recipesDaoControler = (RecipesDaoControler) context.get("recipesDaoControler");
         return recipesDaoControler.getRecipe(recipeName);

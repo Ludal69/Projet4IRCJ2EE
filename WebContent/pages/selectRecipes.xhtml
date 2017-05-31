@@ -11,19 +11,20 @@
 			
 			<legend>Select the recipe</legend>
 			
-			<!-- <h:selectOneMenu value="#{ingrediantsDaoControler.recipeName}">
+			<!-- <h:selectOneMenu value="#{ingrediantsDaoControler.recipeName}" converter="recipeConverter">
          		<f:selectItems value="#{recipesDaoControler.recipes}" var="recipe" itemLabel="#{recipe.name}" itemValue="#{recipe.name}" />
 			</h:selectOneMenu> -->
-			<h:inputText class="field" id="select_recipe" value="#{ingrediantsDaoControler.recipeName}" required="true" size="20" maxlength="50">
-	           <!-- <f:ajax event="blur" render="firstNameMessage" /> -->
+			<h:inputText class="field" id="select_recipe" converter="recipeConverter" value="#{ingrediantsDaoControler.recipe}" required="true" size="20" maxlength="50">
 	        </h:inputText>
+	        
+	        
 <!-- 			<br></br> -->
 <!-- 			<ul> -->
 <!-- 				<ui:repeat value="#{ingrediantsDaoControler.ingrediants}" var="ingrediant"> -->
 <!-- 						<li><h:outputText value="#{ingrediant.name}"/></li> -->
 <!-- 				</ui:repeat> -->
 <!-- 			</ul> -->
-				<h:commandButton value="Desplay recipe" action="desplayRecipes.xhtml" styleClass="button">
+				<h:commandButton value="Desplay recipe" action="desplayRecipe.xhtml" styleClass="button" update="ingrediantsDaoControler">
 	            <!-- <f:ajax execute="@form" render="@form" /> -->
 		        </h:commandButton>
 		</fieldset>
@@ -35,4 +36,8 @@
     		
 </ui:composition>
 </html>
+
+
+
+
 

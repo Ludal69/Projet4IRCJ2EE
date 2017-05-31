@@ -10,11 +10,32 @@
 		<fieldset>
 			<legend>Recipe</legend>
 
-		    <ul>
+		    <!-- <ul>
 				<ui:repeat value="#{ingrediantsDaoControler.ingrediants}" var="ingrediant">
 						<li><h:outputText value="#{ingrediant.name}"/></li>
 				</ui:repeat>
-			</ul>
+			</ul> -->
+			
+			<table style="width:100%">
+			  	<tr>
+				    <th>Recipe</th>
+				    <th>Ingredients</th> 
+			  	</tr>
+			  	<ui:repeat value="recipesDaoControler.recipes" var="recipe">
+			  		<td>#{recipe.name}</td>
+			  		<td>#{recipe.name}</td>
+			  	</ui:repeat>
+			  	<tr>
+				    <td>Jill</td>
+				    <td>Smith</td> 
+				    <td>50</td>
+			  	</tr>
+				<tr>
+				    <td>Eve</td>
+				    <td>Jackson</td> 
+				    <td>94</td>
+				</tr>
+			</table>
 			
 			<h:button value="Back to selection" outcome="selectRecipes.jsf" styleClass="button">
             <!-- <f:ajax execute="@form" render="@form" /> -->
