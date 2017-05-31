@@ -14,6 +14,7 @@
 <h:body>
 	<h:form id="template">
 
+		<!-- HEADER -->
 		<div class="header">
 			<div class="header_logo_lien" id="gauche">
 				<ui:insert name="header_logo_lien">
@@ -63,11 +64,15 @@
 			</div>
 		</div>
 
+
+		<!-- COREBODY -->
 		<div id="corebody" class="corebody">
 			<ui:insert name="corebody">
 				Default Section Content
 			</ui:insert>
 		</div>
+		
+		<!-- FOOTER -->
 		<div id="footer" class="footer">
 
 			<h:outputText value="Copyright 2017 all right reserved"
