@@ -14,7 +14,7 @@ import com.projet.model.bean.Recipe;
 
 
 @ManagedBean
-@ApplicationScoped
+@SessionScoped
 
 public class RecipesDaoControler implements Serializable{
 	/**

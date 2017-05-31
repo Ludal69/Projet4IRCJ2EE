@@ -23,7 +23,7 @@ import com.projet.model.bean.Recipe;
 
 @ManagedBean(name="ingrediantsDaoControler")
 @Named
-@ApplicationScoped
+@SessionScoped
 //@FacesConverter("myObjectConverter")
 
 public class IngrediantsDaoControler implements Serializable{
@@ -47,14 +47,14 @@ public class IngrediantsDaoControler implements Serializable{
 		this.ingrediants = new ArrayList<Ingrediant>();
 	}
 
-	public String getRecipeName() {
-		return recipeName;
-	}
-
-	public void setRecipeName(String recipeName) {
-		this.recipeName = recipeName;
-		//System.out.println(this.recipeName);
-	}
+//	public String getRecipeName() {
+//		return recipeName;
+//	}
+//
+//	public void setRecipeName(String recipeName) {
+//		this.recipeName = recipeName;
+//		//System.out.println(this.recipeName);
+//	}
 
 	public List<Ingrediant> getIngrediants(String recipeName){
 		//For test
