@@ -11,18 +11,21 @@
 			
 			<legend>Select the recipe</legend>
 			
-			<h:selectOneMenu value="#{ingrediantsDaoControler.recipe}">
-		    	<f:selectItems value="#{recipesDaoControler.recipes}" var="recipe" itemLabel="#{recipe.name}" itemValue="#{recipe}" />
-			</h:selectOneMenu>
-			<br></br>
-			<ul>
-				<ui:repeat value="#{ingrediantsDaoControler.ingrediants}" var="ingrediant">
-						<li><h:outputText value="#{ingrediant.name}"/></li>
-				</ui:repeat>
-			</ul>
-				<h:button value="Desplay recipe" outcome="desplayRecipes.jsf" styleClass="button">
+			<!-- <h:selectOneMenu value="#{ingrediantsDaoControler.recipeName}">
+         		<f:selectItems value="#{recipesDaoControler.recipes}" var="recipe" itemLabel="#{recipe.name}" itemValue="#{recipe.name}" />
+			</h:selectOneMenu> -->
+			<h:inputText class="field" id="select_recipe" value="#{ingrediantsDaoControler.recipeName}" required="true" size="20" maxlength="50">
+	           <!-- <f:ajax event="blur" render="firstNameMessage" /> -->
+	        </h:inputText>
+<!-- 			<br></br> -->
+<!-- 			<ul> -->
+<!-- 				<ui:repeat value="#{ingrediantsDaoControler.ingrediants}" var="ingrediant"> -->
+<!-- 						<li><h:outputText value="#{ingrediant.name}"/></li> -->
+<!-- 				</ui:repeat> -->
+<!-- 			</ul> -->
+				<h:commandButton value="Desplay recipe" action="desplayRecipes.xhtml" styleClass="button">
 	            <!-- <f:ajax execute="@form" render="@form" /> -->
-		        </h:button>
+		        </h:commandButton>
 		</fieldset>
 	</h:form>
 	   <h1>TEST</h1>
