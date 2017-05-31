@@ -4,21 +4,15 @@
 	xmlns:h="http://java.sun.com/jsf/html">
 <ui:composition template="../templates/onlyFooterTemplate.xhtml">
 
-
-	<!--image Recipes  -->
-	<ui:define name="header"
-		style="width: 100%;height: 0px;background-color: white;font-size: 0px;color: white;">
-	</ui:define>
-
-
+	
 	<ui:define name="corebody">
 		<!-- 		<h:commandButton value="Go to a New Page"
 			action="#{pageManager.goToPage}" class="menuButton" /> -->
-		<h:commandButton value="Emergency" class="menuButton"
+		<h:commandButton action="emergency" value="Emergency" class="menuButton"
 			style="background-color:orange; margin-top: 20px;margin-left: 75px;" />
-		<h:commandButton value="Recipes" class="menuButton"
+		<h:commandButton action="recipes" value="Recipes" class="menuButton"
 			style="background-color:blue; margin-top: 20px;margin-left: 75px;" />
-		<h:commandButton value="Shop" class="menuButton"
+		<h:commandButton action="shop" value="Shop" class="menuButton"
 			style="background-color:green;margin-top: 20px;margin-left: 75px;" />
 	</ui:define>
 
