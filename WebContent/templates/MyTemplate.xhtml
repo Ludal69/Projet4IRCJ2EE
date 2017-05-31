@@ -4,7 +4,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:f="http://java.sun.com/jsf/core"
-	xmlns:ui="http://java.sun.com/jsf/facelets">
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
 
 <h:head>
 	<link href="../ressources/css/mystyle.css" rel="stylesheet" />
@@ -14,24 +15,54 @@
 	<div class="header">
 		<div class="header_logo_lien" id="gauche">
 			<ui:insert name="header_logo_lien">
-				<!--Image ici  -->
 			</ui:insert>
 		</div>
-		<!--mettre le add ici  -->
 		<div class="loginHeader" id="droite">
 			<ui:insert name="loginHeader">
 				<h:outputLabel for="login">Login <span
-						class="requis">*</span>
+						class="requis" style="padding-right: 5px">*</span>
 				</h:outputLabel>
 				<h:inputText class="field" id="login"
 					value="#{userDaoControler.user.login}" required="true" size="20"
 					maxlength="60" requiredMessage="#{msg['inscription.email']}">
 					<!-- <f:ajax event="blur" render="loginMessage" /> -->
+					<f:validator validatorId="validators.login" class="validator" />
 				</h:inputText>
 				<h:message id="loginMessage" for="login" errorClass="erreur" />
 				<br />
 
+				<!--PASSWORD  -->
+				<h:outputLabel for="password">Password <span
+						class="requis">*</span>
+				</h:outputLabel>
+				<h:inputSecret class="field" id="password"
+					value="#{userDaoControler.user.pwd}" required="true" size="20"
+					maxlength="50">
+					<f:validator validatorId="confirmPasswordValidator" />
+				</h:inputSecret>
+				<h:message id="m_password" for="password" errorClass="erreur" />
+				<br />
+				<h:form id="connectButton">
+					<!--Ici ajouter action pour ajouter user  -->
+					<h:commandButton action="#{userDaoControler.addUser()}"
+						image="../ressources/images/add.png" alt="add" class="button"
+						style="float: right;" />
+				</h:form>
+				<!--PASSWORD  -->
+
 			</ui:insert>
+		</div>
+		<div class="becomeMember" id="droite">
+			<ui:insert name="becomeMember">
+				<h:form id="addUser">
+					<!--Ici ajouter action pour ajouter user  -->
+					<h:commandButton action="#{userDaoControler.addUser()}"
+						image="../ressources/images/add.png" alt="add" class="button" />
+					<h:outputText value="Become member"
+						style="vertical-align:10px; padding-right: 50px; padding-left: 10px; Font-Weight: Bold;" />
+				</h:form>
+			</ui:insert>
+
 		</div>
 	</div>
 

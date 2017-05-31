@@ -38,15 +38,18 @@
 	padding-left: 100px
 }
 
+.button {
+	height: 30px;
+	width: 30px;
+}
+
 #gauche{
 	display: inline-block;
 	width: 150px;
-	border: 1px solid black;
 }
 
 #droite {
 	display: inline-block;
-	border: 1px solid blue;
 	float: right;
 }
 /*test  */

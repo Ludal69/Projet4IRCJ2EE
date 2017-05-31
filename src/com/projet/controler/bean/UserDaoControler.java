@@ -9,31 +9,28 @@ import com.projet.dao.UserDao;
 import com.projet.model.bean.User;
 
 @SuppressWarnings("serial")
-@ManagedBean
+@ManagedBean(name="userDaoControler")
 @SessionScoped
+public class UserDaoControler implements Serializable {
+    private User user;
+    private UserDao userDao;
 
-public class UserDaoControler implements Serializable{
-	private User user;
-	private UserDao userDao;
-	
-	public UserDaoControler(){
-		this.userDao= new UserDao();
-		this.user = new User();
-	}
-	
-	public String addUser(){
-		this.userDao.addUser(this.user);
-		return "splashScreen.jsf";
-	}
+    public UserDaoControler() {
+        this.userDao = new UserDao();
+        this.user = new User();
+    }
 
-	public User getUser() {
-		return user;
-	}
+    public String addUser() {
+        this.userDao.addUser(this.user);
+        return "splashScreen.jsf";
+    }
 
-	public void setUser(User user) {
-		this.user = user;
-	}
-	
-	
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
 
 }
