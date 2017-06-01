@@ -7,29 +7,43 @@
 <ui:composition template="../templates/MyTemplate.xhtml">
 
 	<ui:define name="corebody">
-		<h:form id="datagrid">
-			<p:button value="Bookmark" icon="ui-icon-star">
-			</p:button>
-			<p:dataGrid var="recipesBean" value="#{recipesDaoControler.recipes}"
-				columns="2" layout="grid" rows="2" paginator="true" id="recipes"
-				paginatorTemplate="{CurrentPageReport}  {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
-				rowsPerPageTemplate="6,12,16">
 
-				<f:facet name="header">
-	            Results
-	        </f:facet>
-				<h:panelGrid columns="2">
-					<h:panelGrid colums="2">
-						<p:row>
-							<h:outputText value="#{recipesBean.name}" />
-						</p:row>
-						<p:row>
-							<h:outputText value="#{recipesBean.description}" />
-						</p:row>
-					</h:panelGrid>
-				</h:panelGrid>
-			</p:dataGrid>
+		<h:form id="search">
+			<div class="recipeCriteria">
+				<div class="topleft">
+
+					<p:graphicImage name="../ressources/images/clock.png" />
+					<h:outputText value="Preparation Duration" />
+					<h:inputText id="duration"
+						value="#{recipesDaoControler.durationWanted}" required="true"
+						size="20" maxlength="50">
+					</h:inputText>
+					level
+					<h:inputText id="level"
+						value="#{recipesDaoControler.level}" required="true"
+						size="20" maxlength="50">
+					</h:inputText>
+					numberPeople
+					<h:inputText id="numberPeople"
+						value="#{recipesDaoControler.numberPeople}" required="true"
+						size="20" maxlength="50">
+					</h:inputText>
+					type
+					<h:inputText id="type"
+						value="#{recipesDaoControler.type}" required="true"
+						size="20" maxlength="50">
+					</h:inputText>
+
+						<h:commandButton value="search"
+							action="#{recipesDaoControler.searchRecipe()}" type="submit">
+						</h:commandButton>
+				</div>
+				<div class="topRight"></div>
+				<div class="botLeft"></div>
+				<div class="botRight"></div>
+			</div>
 		</h:form>
 	</ui:define>
+
 </ui:composition>
 </html>
