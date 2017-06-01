@@ -15,12 +15,12 @@ import com.projet.dao.RecipesDao;
 import com.projet.model.bean.Recipe;
 
 @ManagedBean
-@ViewScoped
+@SessionScoped
 public class RecipesDaoControler implements Serializable {
     /**
 	 * 
 	 */
-    private static final long serialVersionUID = 1L;
+    private static final long serialVersionUID = 10L;
     private RecipesDao recipesDao;
     private List<Recipe> recipes;
     private String test = "BOB";
@@ -59,7 +59,7 @@ public class RecipesDaoControler implements Serializable {
 
     public List<Recipe> getRecipes() {
         this.recipes = this.recipesDao.getListRecipes();
-        System.out.println(recipes.get(2).getName());
+        System.out.println(recipes.get(1).getName());
         return recipes;
     }
 
