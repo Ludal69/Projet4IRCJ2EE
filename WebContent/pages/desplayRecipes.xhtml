@@ -3,9 +3,9 @@
 	xmlns:ui="http://java.sun.com/jsf/facelets"
 	xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:f = "http://java.sun.com/jsf/core">
-<ui:composition template="../templates/MyTemplate.xhtml">
+<!-- <ui:composition template="../templates/MyTemplate.xhtml"> -->
 
-	<ui:define name="corebody">
+	<!-- <ui:define name="corebody"> -->
 	<h:form>
 	<!-- <h:outputText value="#{recipe.name}"/> -->
 		 <fieldset>
@@ -13,36 +13,21 @@
 
 		    
 			
-			<table style="width:100%">
-			  	<tr>
-				    <th>Recipe</th>
-				    <th>Ingredients</th> 
-			  	</tr>
-			  	<ui:repeat value="recipesDaoControler.recipes" var="recipe">
-			  		<tr>
-				  		<td><h:outputText value="#{recipe.name}"/></td>
-				  		<td>
-				  			<ul>
-					  			<ui:repeat value="#{ingrediantsDaoControler.getIngrediants(recipe.name)}" var="ingredient">
-					  				<li>#{ingredient.name}</li>
-					  			</ui:repeat>
-					  		</ul>
-				  		</td>
-			  		</tr>
-			  	</ui:repeat>
-			  	
-			</table>
 			
-			<h:button value="Back to selection" outcome="selectRecipes.jsf" styleClass="button">
-            <f:ajax execute="@form" render="@form" />
-	        </h:button>
+			  	<ui:repeat value="recipesDaoControler.recipes" var="recipe">
+				  		<h:outputText value="#{recipe.name}"/>
+				</ui:repeat>
+			
+			<h:commandButton value="Back to selection" action="selectRecipes.jsf" styleClass="button">
+     
+	        </h:commandButton>
 		</fieldset>
 	</h:form>
 	   <h1>TEST</h1>
       
     
-    </ui:define>
+    <!-- </ui:define> -->
     		
-</ui:composition>
+<!-- </ui:composition> -->
 </html>
 

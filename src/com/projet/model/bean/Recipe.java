@@ -7,15 +7,15 @@ import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 
 
-@ManagedBean
-@SessionScoped
-public class Recipe implements Serializable{
+//@ManagedBean
+//@SessionScoped
+public class Recipe {//implements Serializable{
 	
 	/**
 	 * 
 	 */
-	private static final long serialVersionUID = 1L;
-	private String name = "";
+	//private static final long serialVersionUID = 1L;
+	private String name = "R";
 	private String description = "";
 	public Recipe() {
 	

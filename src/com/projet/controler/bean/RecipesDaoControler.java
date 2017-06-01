@@ -7,14 +7,16 @@ import java.util.List;
 
 import javax.faces.bean.ApplicationScoped;
 import javax.faces.bean.ManagedBean;
+import javax.faces.bean.RequestScoped;
 import javax.faces.bean.SessionScoped;
 
 import com.projet.dao.RecipesDao;
 import com.projet.model.bean.Recipe;
 
 
+
 @ManagedBean
-@SessionScoped
+@ApplicationScoped
 
 public class RecipesDaoControler implements Serializable{
 	/**
