@@ -4,43 +4,32 @@
 	xmlns:f="http://java.sun.com/jsf/core"
 	xmlns:ui="http://java.sun.com/jsf/facelets"
 	xmlns:p="http://primefaces.org/ui">
-<h:form id="form">
-	<h:outputText value="#{recipesDaoControler.test}" />
-	<h:outputText value="prout2" />
+<ui:composition template="../templates/MyTemplate.xhtml">
 
-<!-- 	<p:dataTable var="recipe" value="#{recipesDaoControler.recipes}">
-		<p:column headerText="name">
-			<h:outputText value="#{recipe.name}" />
-		</p:column>
-		<p:column headerText="description">
-			<h:outputText value="#{recipe.description}" />
-		</p:column>
-	</p:dataTable> -->
-	<p:dataGrid var="recipesBean" value="#{recipesDaoControler.recipes}"
-		columns="2" layout="grid" rows="2" paginator="true" id="recipes"
-		paginatorTemplate="{CurrentPageReport}  {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
-		rowsPerPageTemplate="6,12,16">
+	<ui:define name="corebody">
+		<h:form id="datagrid">
+			<p:button value="Bookmark" icon="ui-icon-star">
+			</p:button>
+			<p:dataGrid var="recipesBean" value="#{recipesDaoControler.recipes}"
+				columns="2" layout="grid" rows="2" paginator="true" id="recipes"
+				paginatorTemplate="{CurrentPageReport}  {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
+				rowsPerPageTemplate="6,12,16">
 
-		<f:facet name="header">
+				<f:facet name="header">
 	            Results
 	        </f:facet>
-
-
-		<h:panelGrid columns="2">
-			<h:panelGrid colums="2">
-				<p:row>
-					<h:outputText value="#{recipesBean.name}" />
-				</p:row>
-				<p:row>
-					<h:outputText value="#{recipesBean.description}" />
-				</p:row>
-			</h:panelGrid>
-		</h:panelGrid>
-
-
-	</p:dataGrid>
-</h:form>
+				<h:panelGrid columns="2">
+					<h:panelGrid colums="2">
+						<p:row>
+							<h:outputText value="#{recipesBean.name}" />
+						</p:row>
+						<p:row>
+							<h:outputText value="#{recipesBean.description}" />
+						</p:row>
+					</h:panelGrid>
+				</h:panelGrid>
+			</p:dataGrid>
+		</h:form>
+	</ui:define>
+</ui:composition>
 </html>
-
-
-

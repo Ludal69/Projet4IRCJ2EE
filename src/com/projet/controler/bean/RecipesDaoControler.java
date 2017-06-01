@@ -23,38 +23,11 @@ public class RecipesDaoControler implements Serializable {
     private static final long serialVersionUID = 10L;
     private RecipesDao recipesDao;
     private List<Recipe> recipes;
-    private String test = "BOB";
-    private List<String> list;
 
     public RecipesDaoControler() {
         this.recipesDao = new RecipesDao();
         this.recipes = new ArrayList<Recipe>();
-        this.list = new ArrayList<String>();
     }
-    
-    public List<String> init() {
-        list.add("a");
-        list.add("b");
-        list.add("c");
-        list.add("d");
-        list.add("e");
-        list.add("f");
-        
-        return list;
-    }
-    
-//    public RecipesDaoControler() {
-//        this.recipesDao = new RecipesDao();
-//        this.recipes = new ArrayList<Recipe>();
-//        this.list = new ArrayList<String>();
-//        list.add("a");
-//        list.add("b");
-//        list.add("c");
-//        list.add("d");
-//        list.add("e");
-//        list.add("f");
-//    }
-
 
 
     public List<Recipe> getRecipes() {
@@ -63,32 +36,17 @@ public class RecipesDaoControler implements Serializable {
         return recipes;
     }
 
-    public Recipe getRecipe(String name) {
-        Recipe recipe = null;
-        System.out.println(name);
-        for (Recipe i : this.recipes) {
-            System.out.println(i.getClass().getName());
-            if (i.getName().equals(name)) {
-                recipe = (Recipe) i;
-            }
-        }
-        return recipe;
-    }
+//    public Recipe getRecipe(String name) {
+//        Recipe recipe = null;
+//        System.out.println(name);
+//        for (Recipe i : this.recipes) {
+//            System.out.println(i.getClass().getName());
+//            if (i.getName().equals(name)) {
+//                recipe = (Recipe) i;
+//            }
+//        }
+//        return recipe;
+//    }
 
-    public String getTest() {
-        return test;
-    }
-
-    public void setTest(String test) {
-        this.test = test;
-    }
-
-    public List<String> getList() {
-        return list;
-    }
-
-    public void setList(List<String> list) {
-        this.list = list;
-    }
 
 }
