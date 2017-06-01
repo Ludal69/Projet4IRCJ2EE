@@ -7,7 +7,6 @@ import javax.faces.bean.SessionScoped;
 
 @ManagedBean
 @SessionScoped
-
 public class Ingrediant implements Serializable{
 	
 	/**
