@@ -16,10 +16,13 @@
 					<h:outputText value="Preparation Duration"
 						style="display: inline-block;padding-right: 23px" />
 					<br />
+					
+			<!--                         METTRE INPUT MASK !!                                       -->
+			
 					<p:selectOneMenu id="duration"
 						value="#{recipesDaoControler.durationWanted}">
 						<!-- <f:selectItem itemLabel="Select One" itemValue="" /> -->
-						<f:selectItems value="#{recipesDaoControler.durations}" />
+						<f:selectItems value="#{recipesDaoControler.getAllDurations()}" />
 					</p:selectOneMenu>
 				</div>
 				<div class="topRight">
@@ -52,13 +55,8 @@
 					</p:selectOneMenu>
 				</div>
 			</div>
-			<!-- <p:commandButton action="menuScreen?faces-redirect=true"
-				value="Go Home" /> -->
 			<p:commandButton action="#{recipesDaoControler.searchRecipe()}"
-				value="Go Home" />
-			<!-- <h:commandButton value="search"
-				action="#{recipesDaoControler.searchRecipe()}" type="submit">
-			</h:commandButton> -->
+				value="Teach Me !" />
 		</h:form>
 	</ui:define>
 

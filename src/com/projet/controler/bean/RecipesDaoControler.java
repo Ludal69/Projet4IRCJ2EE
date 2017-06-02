@@ -39,11 +39,12 @@ public class RecipesDaoControler implements Serializable {
         this.recipes = new ArrayList<Recipe>();
         this.durations = new ArrayList<Integer>();
         this.types = new ArrayList<String>();
-        durations.add(22);
-        durations.add(55);
-        durations.add(15);
-        durations.add(135);
-        durations.add(35);
+//        durations.add(22);
+//        durations.add(55);
+//        durations.add(15);
+//        durations.add(135);
+//        durations.add(35);
+        
         types.add("Dessert");
         types.add("Meal");
         types.add("Fish");
@@ -52,16 +53,18 @@ public class RecipesDaoControler implements Serializable {
 
 
     public List<Recipe> getRecipes() {
-//        this.recipes = this.recipesDao.getListRecipes();
-//        System.out.println(recipes.get(getDurationWanted()));
         return this.recipes;
     }
     
-//    public List<Recipe> getALLRecipes() {
-//      this.recipes = this.recipesDao.getListRecipes();
-//      return this.recipes;
-//  }
+    public List<Recipe> getAllRecipes() {
+      this.recipes = this.recipesDao.getListRecipes();
+      return this.recipes;
+  }
     
+    public List<Integer> getAllDurations() {
+        this.durations = this.recipesDao.getallDurations();
+        return this.durations;
+    }
     
 
     public String searchRecipe() {
