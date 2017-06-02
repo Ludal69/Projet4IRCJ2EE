@@ -9,7 +9,7 @@ import javax.faces.bean.SessionScoped;
 @SessionScoped
 
 public class User implements Serializable {
-	private static final long serialVersionUID = 9L;
+	private static final long serialVersionUID = 1L;
 	private String login = "";
 	private String pwd = "";
 	private String firstName = "";
@@ -19,6 +19,7 @@ public class User implements Serializable {
 	private boolean isConnected = false;
 	
 	public User() {
+		super();
 	}
 
 	public User(String login, String pwd, String firstName, String lastName, int age, String email) {

@@ -15,13 +15,12 @@ import com.projet.dao.UserDao;
 import com.projet.model.bean.User;
 
 @ManagedBean(name="userLoginControler")
-//@Named
 @SessionScoped
 
 public class UserLoginControler implements Serializable{
 
 	private static final long serialVersionUID = 1L;
-	User user;
+	private User user;
 	private UserDao userDao;
 	
 	
@@ -36,19 +35,19 @@ public class UserLoginControler implements Serializable{
 		RequestContext context = RequestContext.getCurrentInstance();
         FacesMessage message = null;
         
-		if (userDao.userExist(user)){
-			user.setConnected(true);
-			message = new FacesMessage(FacesMessage.SEVERITY_INFO, "Welcome", user.getLogin());
+		if (this.userDao.userExist(this.user)){
+			this.user.setConnected(true);
+			message = new FacesMessage(FacesMessage.SEVERITY_INFO, "Welcome", this.user.getLogin());
 		}else{
 			message = new FacesMessage(FacesMessage.SEVERITY_WARN, "Loggin Error", "Invalid credentials");
 		}
 		FacesContext.getCurrentInstance().addMessage(null, message);
-        ((RequestContext) context).addCallbackParam("loggedIn", user.isConnected());
+        ((RequestContext) context).addCallbackParam("loggedIn", this.user.isConnected());
 		
 	}
 	
 	public User getUser() {
-		return user;
+		return this.user;
 	}
 	
 	public void setUser(User user) {
