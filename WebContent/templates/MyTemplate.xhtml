@@ -12,10 +12,11 @@
 </h:head>
 
 <h:body>
-	<h:form id="template">
 
-		<!-- HEADER -->
-		<div class="header">
+
+	<!-- HEADER -->
+	<div class="header">
+		<h:form id="header">
 			<div class="header_logo_lien" id="gauche">
 				<ui:insert name="header_logo_lien">
 				</ui:insert>
@@ -62,26 +63,27 @@
 						style="vertical-align:10px; padding-right: 50px; padding-left: 10px; Font-Weight: Bold;" />
 				</ui:insert>
 			</div>
-		</div>
+		</h:form>
+	</div>
 
 
-		<!-- COREBODY -->
-		<div id="corebody" class="corebody">
-			<ui:insert name="corebody">
+	<!-- COREBODY -->
+	<div id="corebody" class="corebody">
+		<ui:insert name="corebody">
 				Default Section Content
 			</ui:insert>
-		</div>
-		
-		<!-- FOOTER -->
-		<div id="footer" class="footer">
+	</div>
 
-			<h:outputText value="Copyright 2017 all right reserved"
-				style="float: top;position: relative;top: 40px;" />
+	<!-- FOOTER -->
+	<div id="footer" class="footer">
 
-			<img src="../ressources/images/logo.png" alt="Logo"
-				class="header_image" style="float: right;" />
-		</div>
-	</h:form>
+		<h:outputText value="Copyright 2017 all right reserved"
+			style="float: top;position: relative;top: 40px;" />
+
+		<img src="../ressources/images/logo.png" alt="Logo"
+			class="header_image" style="float: right;" />
+	</div>
+
 </h:body>
 
 </html>

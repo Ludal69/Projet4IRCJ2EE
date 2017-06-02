@@ -6,44 +6,68 @@ import java.util.List;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 
-
 @ManagedBean
 @SessionScoped
-public class Recipe implements Serializable{
-	
-	/**
+public class Recipe implements Serializable {
+
+    /**
 	 * 
 	 */
-	private static final long serialVersionUID = 2L;
-	private String name = "";
-	private String description = "";
-	public Recipe() {
-	
-	}
-	
-	public Recipe(String name, String description) {
-		this.name = name;
-		this.description = description;
-	}
+    private static final long serialVersionUID = 1L;
+    private String name = "";
+    private int duration = 0;
+    private int level = 0;
+    private int numberPeople = 0;
+    private String type = "";
 
-	public String getName() {
-		return name;
-	}
+    public Recipe() {
 
-	public void setName(String name) {
-		this.name = name;
-	}
+    }
 
-	public String getDescription() {
-		return description;
-	}
+    /** GETTERS & SETTERS */
 
-	public void setDescription(String description) {
-		this.description = description;
-	}
+    public String getName() {
+        return name;
+    }
 
-	
-	
-	
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public int getDuration() {
+        return duration;
+    }
+
+    public void setDuration(int duration) {
+        this.duration = duration;
+    }
+
+    public int getLevel() {
+        return level;
+    }
+
+    public void setLevel(int level) {
+        this.level = level;
+    }
+
+    public int getNumberPeople() {
+        return numberPeople;
+    }
+
+    public void setNumberPeople(int numberPeople) {
+        this.numberPeople = numberPeople;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
+    public static long getSerialversionuid() {
+        return serialVersionUID;
+    }
 
 }
