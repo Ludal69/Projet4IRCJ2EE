@@ -36,17 +36,17 @@ public class RecipesDaoControler implements Serializable {
         return recipes;
     }
 
-//    public Recipe getRecipe(String name) {
-//        Recipe recipe = null;
-//        System.out.println(name);
-//        for (Recipe i : this.recipes) {
-//            System.out.println(i.getClass().getName());
-//            if (i.getName().equals(name)) {
-//                recipe = (Recipe) i;
-//            }
-//        }
-//        return recipe;
-//    }
+    public Recipe getRecipe(String name) {
+        Recipe recipe = null;
+        System.out.println(name);
+        for (Recipe i : this.recipes) {
+            System.out.println(i.getClass().getName());
+            if (i.getName().equals(name)) {
+                recipe = (Recipe) i;
+            }
+        }
+        return recipe;
+    }
 
 
 }
