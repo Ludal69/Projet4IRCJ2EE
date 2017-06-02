@@ -11,37 +11,54 @@
 		<h:form id="search">
 			<div class="recipeCriteria">
 				<div class="topleft">
-
-					<p:graphicImage name="../ressources/images/clock.png" />
-					<h:outputText value="Preparation Duration" />
-					<h:inputText id="duration"
-						value="#{recipesDaoControler.durationWanted}" required="true"
-						size="20" maxlength="50">
-					</h:inputText>
-					level
-					<h:inputText id="level"
-						value="#{recipesDaoControler.level}" required="true"
-						size="20" maxlength="50">
-					</h:inputText>
-					numberPeople
-					<h:inputText id="numberPeople"
-						value="#{recipesDaoControler.numberPeople}" required="true"
-						size="20" maxlength="50">
-					</h:inputText>
-					type
-					<h:inputText id="type"
-						value="#{recipesDaoControler.type}" required="true"
-						size="20" maxlength="50">
-					</h:inputText>
-
-						<h:commandButton value="search"
-							action="#{recipesDaoControler.searchRecipe()}" type="submit">
-						</h:commandButton>
+					<h:graphicImage value="../ressources/images/clock.png"
+						style="width: 75px;height: 75px;" />
+					<h:outputText value="Preparation Duration"
+						style="display: inline-block;padding-right: 23px" />
+					<br />
+					<p:selectOneMenu id="duration"
+						value="#{recipesDaoControler.durationWanted}">
+						<!-- <f:selectItem itemLabel="Select One" itemValue="" /> -->
+						<f:selectItems value="#{recipesDaoControler.durations}" />
+					</p:selectOneMenu>
 				</div>
-				<div class="topRight"></div>
-				<div class="botLeft"></div>
-				<div class="botRight"></div>
+				<div class="topRight">
+					<h:graphicImage value="../ressources/images/rating.png"
+						style="width: 75px;height: 75px;" />
+					<h:outputText value="Cook Expertise"
+						style="display: inline-block;padding-right: 23px" />
+					<br />
+					<p:rating value="#{recipesDaoControler.level}" />
+				</div>
+				<div class="botLeft">
+					<h:graphicImage value="../ressources/images/peoples.png"
+						style="width: 75px;height: 75px;" />
+					<h:outputText value="For how many people"
+						style="display: inline-block;padding-right: 23px" />
+					<br />
+					<h:panelGrid columns="1" style="margin-bottom: 10px">
+						<p:inputText id="txt1" value="#{recipesDaoControler.numberPeople}" />
+						<p:slider for="txt1" />
+					</h:panelGrid>
+				</div>
+				<div class="botRight">
+					<h:graphicImage value="../ressources/images/type.png"
+						style="width: 75px;height: 75px;" />
+					<h:outputText value="Cook Type"
+						style="display: inline-block;padding-right: 23px" />
+					<br />
+					<p:selectOneMenu id="type" value="#{recipesDaoControler.type}">
+						<f:selectItems value="#{recipesDaoControler.types}" />
+					</p:selectOneMenu>
+				</div>
 			</div>
+			<!-- <p:commandButton action="menuScreen?faces-redirect=true"
+				value="Go Home" /> -->
+			<p:commandButton action="#{recipesDaoControler.searchRecipe()}"
+				value="Go Home" />
+			<!-- <h:commandButton value="search"
+				action="#{recipesDaoControler.searchRecipe()}" type="submit">
+			</h:commandButton> -->
 		</h:form>
 	</ui:define>
 

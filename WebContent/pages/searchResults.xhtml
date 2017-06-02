@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+<ui:composition template="../templates/MyTemplate.xhtml">
+
+	<ui:define name="corebody">
+
+		<h:form id="results">
+			<p:dataTable var="recipe" value="#{recipesDaoControler.recipes}">
+				<p:column headerText="Name">
+					<h:outputText value="#{recipe.name}" />
+				</p:column>
+
+				<p:column headerText="Duration">
+					<h:outputText value="#{recipe.duration}" />
+				</p:column>
+
+				<p:column headerText="Level">
+					<h:outputText value="#{recipe.level}" />
+				</p:column>
+
+				<p:column headerText="NumberPeople">
+					<h:outputText value="#{recipe.numberPeople}" />
+				</p:column>
+				<p:column headerText="Type">
+					<h:outputText value="#{recipe.type}" />
+				</p:column>
+			</p:dataTable>
+		</h:form>
+	</ui:define>
+
+</ui:composition>
+</html>

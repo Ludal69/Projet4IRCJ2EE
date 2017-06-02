@@ -23,25 +23,50 @@ public class RecipesDaoControler implements Serializable {
     private static final long serialVersionUID = 1L;
     private RecipesDao recipesDao;
     private List<Recipe> recipes;
+    private List<Integer> durations;
+    private List<String> types;
     
-    private int durationWanted = 0;
+    
+    private int durationWanted;
     private int level = 0;
     private int numberPeople = 0;
     private String type = "";
 
+ 
     public RecipesDaoControler() {
+        super();
         this.recipesDao = new RecipesDao();
         this.recipes = new ArrayList<Recipe>();
+        this.durations = new ArrayList<Integer>();
+        this.types = new ArrayList<String>();
+        durations.add(22);
+        durations.add(55);
+        durations.add(15);
+        durations.add(135);
+        durations.add(35);
+        types.add("Dessert");
+        types.add("Meal");
+        types.add("Fish");
     }
 
+
+
     public List<Recipe> getRecipes() {
-        this.recipes = this.recipesDao.getListRecipes();
-        return recipes;
+//        this.recipes = this.recipesDao.getListRecipes();
+//        System.out.println(recipes.get(getDurationWanted()));
+        return this.recipes;
     }
+    
+//    public List<Recipe> getALLRecipes() {
+//      this.recipes = this.recipesDao.getListRecipes();
+//      return this.recipes;
+//  }
+    
+    
 
     public String searchRecipe() {
         this.recipes =  this.recipesDao.searchRecipe(getDurationWanted(), getLevel(), getNumberPeople(), getType());
-        return "splashScreen.jsf";
+        return "searchResults.jsf";
     }
 
     // TEST
@@ -56,6 +81,44 @@ public class RecipesDaoControler implements Serializable {
         }
         return recipe;
     }
+
+    
+    
+    public RecipesDao getRecipesDao() {
+        return recipesDao;
+    }
+
+
+
+    public void setRecipesDao(RecipesDao recipesDao) {
+        this.recipesDao = recipesDao;
+    }
+
+
+
+    public List<Integer> getDurations() {
+        return durations;
+    }
+
+
+
+    public void setDurations(List<Integer> durations) {
+        this.durations = durations;
+    }
+
+
+
+    public static long getSerialversionuid() {
+        return serialVersionUID;
+    }
+
+
+
+    public void setRecipes(List<Recipe> recipes) {
+        this.recipes = recipes;
+    }
+
+
 
     public int getDurationWanted() {
         return durationWanted;
@@ -87,6 +150,18 @@ public class RecipesDaoControler implements Serializable {
 
     public void setType(String type) {
         this.type = type;
+    }
+
+
+
+    public List<String> getTypes() {
+        return types;
+    }
+
+
+
+    public void setTypes(List<String> types) {
+        this.types = types;
     }
 
 }

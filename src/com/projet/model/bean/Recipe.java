@@ -6,14 +6,14 @@ import java.util.List;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 
-@ManagedBean
-@SessionScoped
-public class Recipe implements Serializable {
+//@ManagedBean
+//@SessionScoped
+public class Recipe  {
 
     /**
 	 * 
 	 */
-    private static final long serialVersionUID = 1L;
+//    private static final long serialVersionUID = 1L;
     private String name = "";
     private int duration = 0;
     private int level = 0;
@@ -66,8 +66,5 @@ public class Recipe implements Serializable {
         this.type = type;
     }
 
-    public static long getSerialversionuid() {
-        return serialVersionUID;
-    }
 
 }
