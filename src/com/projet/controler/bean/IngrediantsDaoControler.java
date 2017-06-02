@@ -21,9 +21,9 @@ import com.projet.model.bean.Ingrediant;
 import com.projet.model.bean.Recipe;
 
 
-@ManagedBean(name="ingrediantsDaoControler")
-@Named
-@SessionScoped
+@ManagedBean
+
+@RequestScoped
 //@FacesConverter("myObjectConverter")
 
 public class IngrediantsDaoControler implements Serializable{
@@ -35,26 +35,26 @@ public class IngrediantsDaoControler implements Serializable{
 	private IngrediantsDao ingrediantsDao;
 	//private Recipe recipe;
 	
-	//private String recipeName;
+	private String recipeName;
 	private List<Ingrediant> ingrediants;
-	Recipe recipe;
+	private Recipe recipe;
 	
 	
 	public IngrediantsDaoControler() {
 		this.ingrediantsDao = new IngrediantsDao();
-		//this.recipeName = "riz";
+		this.recipeName = "riz";
 		this.recipe = new Recipe();
 		this.ingrediants = new ArrayList<Ingrediant>();
 	}
 
-//	public String getRecipeName() {
-//		return recipeName;
-//	}
-//
-//	public void setRecipeName(String recipeName) {
-//		this.recipeName = recipeName;
-//		//System.out.println(this.recipeName);
-//	}
+	public String getRecipeName() {
+		return recipeName;
+	}
+
+	public void setRecipeName(String recipeName) {
+		this.recipeName = recipeName;
+		System.out.println(this.recipeName);
+	}
 
 	public List<Ingrediant> getIngrediants(String recipeName){
 		//For test

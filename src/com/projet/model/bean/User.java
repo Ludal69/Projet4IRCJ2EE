@@ -19,6 +19,7 @@ public class User implements Serializable {
 	private boolean isConnected = false;
 	
 	public User() {
+		super();
 	}
 
 	public User(String login, String pwd, String firstName, String lastName, int age, String email) {
