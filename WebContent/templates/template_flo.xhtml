@@ -22,19 +22,43 @@
 			</div>
 			<div class="loginHeader" id="droite">
 				<ui:insert name="loginHeader">
-					<p:growl id="growl" sticky="true" showDetail="true" life="3000" />
-					<h:panelGrid columns="2" cellpadding="5">
-			            <h:outputLabel for="login" value="Login : " />
-			            <p:inputText id="login" value="#{userLoginControler.user.login}" required="true" label="login" />
-			 
-			            <h:outputLabel for="password" value="Password:" />
-			            <p:password id="password" value="#{userLoginControler.user.pwd}" required="true" label="password" />
-			 
-			            <f:facet name="login_footer">
-			                <p:commandButton value="Login" update="growl" actionListener="#{userLoginControler.checkLogin}"
-			                                 oncomplete="handleLoginRequest(xhr, status, args)" />
-			            </f:facet>  
-			        </h:panelGrid>
+					
+					
+					<h:form>            
+					    <h:outputLink value="javascript:void(0)" onclick="PF('dlg').show();" title="login">
+					        <p:graphicImage name="../ressources/images/login.png" />
+					    </h:outputLink>
+					 
+					    <p:growl id="growl" sticky="true" showDetail="true" life="3000" />
+					 
+					    <p:dialog header="Login" widgetVar="dlg" resizable="false">
+					        <h:panelGrid columns="2" cellpadding="5">
+					            <h:outputLabel for="login" value="Login :" />
+					            <p:inputText id="login" value="#{userLoginControler.user.login}" required="true" label="login" />
+					 
+					            <h:outputLabel for="password" value="Password:" />
+					            <p:password id="password" value="#{userLoginControler.user.pwd}" required="true" label="password" />
+					 
+					            <f:facet name="footer">
+					                <p:commandButton value="Login" update="growl" actionListener="#{userLoginControler.checkLogin}"
+					                                 oncomplete="handleLoginRequest(xhr, status, args)" />
+					            </f:facet>  
+					        </h:panelGrid>
+					    </p:dialog>
+					</h:form>
+					 
+					<script type="text/javascript">
+					    function handleLoginRequest(xhr, status, args) {
+					        if(args.validationFailed || !args.loggedIn) {
+					            PF('dlg').jq.effect("shake", {times:5}, 100);
+					        }
+					        else {
+					            PF('dlg').hide();
+					            $('#loginLink').fadeOut();
+					        }
+					    }
+					</script>
+					
 
 				</ui:insert>
 			</div>

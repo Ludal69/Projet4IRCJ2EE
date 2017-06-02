@@ -34,17 +34,20 @@ public class UserLoginControler implements Serializable{
 		
 		RequestContext context = RequestContext.getCurrentInstance();
         FacesMessage message = null;
-        
-		if (this.userDao.userExist(this.user)){
-			this.user.setConnected(true);
-			message = new FacesMessage(FacesMessage.SEVERITY_INFO, "Welcome", this.user.getLogin());
-		}else{
-			message = new FacesMessage(FacesMessage.SEVERITY_WARN, "Loggin Error", "Invalid credentials");
-		}
-		FacesContext.getCurrentInstance().addMessage(null, message);
-        ((RequestContext) context).addCallbackParam("loggedIn", this.user.isConnected());
+        boolean loggedIn = false;
+         
+        if(this.userDao.userExist(this.user)) {
+            loggedIn = true;
+            message = new FacesMessage(FacesMessage.SEVERITY_INFO, "Welcome", user.getLogin());
+        } else {
+            loggedIn = false;
+            message = new FacesMessage(FacesMessage.SEVERITY_WARN, "Loggin Error", "Invalid credentials");
+        }
+         
+        FacesContext.getCurrentInstance().addMessage(null, message);
+        context.addCallbackParam("loggedIn", loggedIn);
+    }   
 		
-	}
 	
 	public User getUser() {
 		return this.user;
