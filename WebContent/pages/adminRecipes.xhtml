@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+<ui:composition template="../templates/MyTemplate.xhtml">
+
+	<ui:define name="corebody">
+
+		<h:form id="search">
+			<div class="recipeCriteria">
+				<div class="topleft">
+					<h:graphicImage value="../ressources/images/clock.png"
+						style="width: 75px;height: 75px;" />
+					<h:outputText value="Preparation Duration"
+						style="display: inline-block;padding-right: 23px" />
+					<br />
+					
+			<!--                         METTRE INPUT MASK !!                                       -->
+			
+					<p:selectOneMenu id="duration"
+						value="#{recipesDaoControler.durationWanted}">
+						<!-- <f:selectItem itemLabel="Select One" itemValue="" /> -->
+						<f:selectItems value="#{recipesDaoControler.getAllDurations()}" />
+					</p:selectOneMenu>
+				</div>
+				<div class="topRight">
+					<h:graphicImage value="../ressources/images/rating.png"
+						style="width: 75px;height: 75px;" />
+					<h:outputText value="Cook Expertise"
+						style="display: inline-block;padding-right: 23px" />
+					<br />
+					<p:rating value="#{recipesDaoControler.level}" />
+				</div>
+				<div class="botLeft">
+					<h:graphicImage value="../ressources/images/peoples.png"
+						style="width: 75px;height: 75px;" />
+					<h:outputText value="For how many people"
+						style="display: inline-block;padding-right: 23px" />
+					<br />
+					<h:panelGrid columns="1" style="margin-bottom: 10px">
+						<p:inputText id="txt1" value="#{recipesDaoControler.numberPeople}" />
+						<p:slider for="txt1" />
+					</h:panelGrid>
+				</div>
+				<div class="botRight">
+					<h:graphicImage value="../ressources/images/type.png"
+						style="width: 75px;height: 75px;" />
+					<h:outputText value="Cook Type"
+						style="display: inline-block;padding-right: 23px" />
+					<br />
+					<p:selectOneMenu id="type" value="#{recipesDaoControler.type}">
+						<f:selectItems value="#{recipesDaoControler.types}" />
+					</p:selectOneMenu>
+				</div>
+			</div>
+			<p:commandButton action="#{recipesDaoControler.searchRecipe()}"
+				value="Teach Me !" />
+		</h:form>
+	</ui:define>
+
+</ui:composition>
+</html>

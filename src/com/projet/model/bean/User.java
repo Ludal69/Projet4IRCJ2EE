@@ -5,11 +5,12 @@ import java.io.Serializable;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 
-@ManagedBean
-@SessionScoped
+//@ManagedBean
+//@SessionScoped
 
-public class User implements Serializable {
-	private static final long serialVersionUID = 1L;
+public class User{
+//	private static final long serialVersionUID = 1L;
+	private long id = 0;
 	private String login = "";
 	private String pwd = "";
 	private String firstName = "";
@@ -22,8 +23,9 @@ public class User implements Serializable {
 		super();
 	}
 
-	public User(String login, String pwd, String firstName, String lastName, int age, String email) {
+	public User(long id, String login, String pwd, String firstName, String lastName, int age, String email) {
 		super();
+		this.id = id;
 		this.login = login;
 		this.pwd = pwd;
 		this.firstName = firstName;
@@ -31,6 +33,14 @@ public class User implements Serializable {
 		this.age = age;
 		this.email = email;
 		this.isConnected = false;
+	}
+	
+	public long getId() {
+		return id;
+	}
+
+	public void setId(long id) {
+		this.id = id;
 	}
 
 	public String getLogin() {
@@ -89,9 +99,7 @@ public class User implements Serializable {
 		this.isConnected = isConnected;
 	}
 
-	public static long getSerialversionuid() {
-		return serialVersionUID;
-	}
+	
 	
 	
 	

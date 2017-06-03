@@ -36,11 +36,11 @@ public class UserLoginControler implements Serializable{
 		RequestContext context = RequestContext.getCurrentInstance();
         FacesMessage message = null;
         boolean loggedIn = false;
-        boolean ret = false;
+        boolean result = this.userDao.userExist(this.user);
         
        
         
-        if(this.userDao.userExist(this.user)) {
+        if(result) {
             loggedIn = true;
             message = new FacesMessage(FacesMessage.SEVERITY_INFO, "Welcome", user.getLogin());
         } else {

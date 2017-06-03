@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+<!-- <ui:composition template="../templates/template_flo.xhtml">
+	<ui:define name="corebody"> -->
+		<h:form id="datagrid">
+			<br> </br>
+			<p:dataTable var="user" value="#{userDaoControler.getAllUsers()}"
+				id="userList">
+				<p:column headerText="id">
+					<h:outputText value="#{user.login}" />
+				</p:column>
+			</p:dataTable>
+		</h:form>
+<!-- 	</ui:define>
+</ui:composition> -->
+</html>
+
+
+
