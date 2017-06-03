@@ -14,7 +14,7 @@ public class UserDao extends AbstractDao{
 	
 	public boolean userExist(User user){
 		boolean ret = false;
-ResultSet resultSet = null;
+		ResultSet resultSet = null;
 		
 		try {
 			java.sql.Connection cnx = java.sql.DriverManager.getConnection(
@@ -31,7 +31,7 @@ ResultSet resultSet = null;
 			//query.executeUpdate(sql);
 			
 			resultSet = query.executeQuery(sql);
-			if(resultSet == null){
+			if(resultSet.next() == true){
 				ret = true;
 			}else{
 				ret = false;

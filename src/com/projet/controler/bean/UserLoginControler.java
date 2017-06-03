@@ -4,6 +4,7 @@ import java.io.Serializable;
 
 import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
+import javax.faces.bean.RequestScoped;
 import javax.faces.bean.SessionScoped;
 import javax.faces.context.FacesContext;
 import javax.faces.event.ActionEvent;
@@ -15,7 +16,7 @@ import com.projet.dao.UserDao;
 import com.projet.model.bean.User;
 
 @ManagedBean(name="userLoginControler")
-@SessionScoped
+@RequestScoped
 
 public class UserLoginControler implements Serializable{
 
@@ -35,7 +36,10 @@ public class UserLoginControler implements Serializable{
 		RequestContext context = RequestContext.getCurrentInstance();
         FacesMessage message = null;
         boolean loggedIn = false;
-         
+        boolean ret = false;
+        
+       
+        
         if(this.userDao.userExist(this.user)) {
             loggedIn = true;
             message = new FacesMessage(FacesMessage.SEVERITY_INFO, "Welcome", user.getLogin());

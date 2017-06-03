@@ -26,8 +26,8 @@ public class EmailValidator implements Validator {
 	public void validate(FacesContext context, UIComponent component, Object value) throws ValidatorException {
 		matcher = pattern.matcher(value.toString());
 		if (!matcher.matches()) {
-			FacesMessage msg = new FacesMessage("Login validation failed.",
-					"Login Validation failed please enter an email address");
+			FacesMessage msg = new FacesMessage("Email validation failed.",
+					"Email Validation failed please enter an email address");
 			msg.setSeverity(FacesMessage.SEVERITY_ERROR);
 			throw new ValidatorException(msg);
 		}

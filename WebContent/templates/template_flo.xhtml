@@ -26,7 +26,7 @@
 					
 					<h:form>            
 					    <h:outputLink value="javascript:void(0)" onclick="PF('dlg').show();" title="login">
-					        <p:graphicImage name="../ressources/images/login.png" />
+					        <h:graphicImage alt="Login" name="../ressources/images/login.png" />
 					    </h:outputLink>
 					 
 					    <p:growl id="growl" sticky="true" showDetail="true" life="3000" />
@@ -34,10 +34,10 @@
 					    <p:dialog header="Login" widgetVar="dlg" resizable="false">
 					        <h:panelGrid columns="2" cellpadding="5">
 					            <h:outputLabel for="login" value="Login :" />
-					            <p:inputText id="login" value="#{userLoginControler.user.login}" required="true" label="login" />
+					            <p:inputText id="login" value="#{userLoginControler.user.login}" label="login" />
 					 
 					            <h:outputLabel for="password" value="Password:" />
-					            <p:password id="password" value="#{userLoginControler.user.pwd}" required="true" label="password" />
+					            <p:password id="password" value="#{userLoginControler.user.pwd}" label="password" />
 					 
 					            <f:facet name="footer">
 					                <p:commandButton value="Login" update="growl" actionListener="#{userLoginControler.checkLogin}"
@@ -65,7 +65,7 @@
 			<div class="becomeMember" id="droite">
 				<ui:insert name="becomeMember">
 					<!--Ici ajouter action pour ajouter user  -->
-					<h:commandButton action="#{userDaoControler.addUser()}"
+					<h:commandButton action="../pages/inscriptionForm.xhtml"
 						image="../ressources/images/add.png" alt="add" class="button" />
 					<h:outputText value="Become member"
 						style="vertical-align:10px; padding-right: 50px; padding-left: 10px; Font-Weight: Bold;" />
