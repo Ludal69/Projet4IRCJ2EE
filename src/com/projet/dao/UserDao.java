@@ -108,7 +108,7 @@ public class UserDao extends AbstractDao{
             java.sql.Statement query = cnx.createStatement();
 
             // Cr�ation du contenu de la requ�te a �x�cuter
-            String sql = "SELECT * FROM `user`";
+            String sql = "SELECT * FROM `user` ORDER BY `user_id` ASC";
 
             // Ex�cution de la requ�te de modification
             // query.executeUpdate(sql);
