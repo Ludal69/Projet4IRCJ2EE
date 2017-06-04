@@ -12,7 +12,6 @@
 </h:head>
 
 <h:body>
-	<h:form id="template">
 
 		<!-- HEADER -->
 		<div class="header">
@@ -57,18 +56,19 @@
 					            $('#loginLink').fadeOut();
 					        }
 					    }
-					</script>
-					
+					</script>	
 
 				</ui:insert>
 			</div>
 			<div class="becomeMember" id="droite">
 				<ui:insert name="becomeMember">
-					<!--Ici ajouter action pour ajouter user  -->
-					<h:commandButton action="../pages/inscriptionForm.xhtml"
-						image="../ressources/images/add.png" alt="add" class="button" />
-					<h:outputText value="Become member"
-						style="vertical-align:10px; padding-right: 50px; padding-left: 10px; Font-Weight: Bold;" />
+					<h:form>
+						<!--Ici ajouter action pour ajouter user  -->
+						<h:commandButton action="../pages/inscriptionForm.xhtml"
+							image="../ressources/images/add.png" alt="add" class="button" />
+						<h:outputText value="Become member"
+							style="vertical-align:10px; padding-right: 50px; padding-left: 10px; Font-Weight: Bold;" />
+					</h:form>
 				</ui:insert>
 			</div>
 		</div>
@@ -83,14 +83,15 @@
 		
 		<!-- FOOTER -->
 		<div id="footer" class="footer">
-
+		
 			<h:outputText value="Copyright 2017 all right reserved"
 				style="float: top;position: relative;top: 40px;" />
-
-			<img src="../ressources/images/logo.png" alt="Logo"
-				class="header_image" style="float: right;" />
+			<a href="menuScreen.xhtml">
+				<img src="../ressources/images/logo.png" alt="Logo"
+					class="header_image" style="float: right;" />
+			</a>
 		</div>
-	</h:form>
+	
 </h:body>
 
 </html>

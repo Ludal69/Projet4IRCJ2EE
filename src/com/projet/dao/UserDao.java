@@ -82,7 +82,7 @@ public class UserDao extends AbstractDao{
 			java.sql.Statement query = cnx.createStatement();
 
 			// Cr�ation du contenu de la requ�te a �x�cuter
-			String sql = "DELETE FROM "+this.DB_TABLE_NAME+"`.`user` WHERE `user_id`="+id+"";
+			String sql = "DELETE FROM `user` WHERE `user_id`="+id+";";
 			
 
 			// Ex�cution de la requ�te de modification
