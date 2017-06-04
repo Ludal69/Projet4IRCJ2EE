@@ -21,16 +21,14 @@ public class UserDaoControler implements Serializable {
 	private static final long serialVersionUID = 1L;
 	private User user;
     private UserDao userDao;
-    private int userIdToDelete;
 
     public UserDaoControler() {
         this.userDao = new UserDao();
         this.user = new User();
-        this.userIdToDelete = 0;
     }
     
     public String removeUser(){
-    	this.userDao.removeUser(this.userIdToDelete);
+    	this.userDao.removeUser(this.user.getId());
     	return "adminUsers.xhtml";
     }
     
@@ -50,14 +48,6 @@ public class UserDaoControler implements Serializable {
     public void setUser(User user) {
         this.user = user;
     }
-
-	public int getUserIdToDelete() {
-		return userIdToDelete;
-	}
-
-	public void setUserIdToDelete(int userIdToDelete) {
-		this.userIdToDelete = userIdToDelete;
-	}
     
     
 

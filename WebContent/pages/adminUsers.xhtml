@@ -9,7 +9,7 @@
 	<ui:define name="corebody">
 		<h:form id="deleteUser">
 			<p:outputLabel value="ID of the user to delete :"/>
-			<p:inputText value="#{userDaoControler.userIdToDelete}"/>
+			<p:inputText value="#{userDaoControler.user.id}"/>
 			<p:commandButton action="#{userDaoControler.removeUser()}" 
 				value="Delete" ajax="false"/>	
 		</h:form>

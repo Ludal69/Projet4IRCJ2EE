@@ -10,7 +10,7 @@ import javax.faces.bean.SessionScoped;
 
 public class User{
 //	private static final long serialVersionUID = 1L;
-	private long id = 0;
+	private int id = 0;
 	private String login = "";
 	private String pwd = "";
 	private String firstName = "";
@@ -23,7 +23,7 @@ public class User{
 		super();
 	}
 
-	public User(long id, String login, String pwd, String firstName, String lastName, int age, String email) {
+	public User(int id, String login, String pwd, String firstName, String lastName, int age, String email) {
 		super();
 		this.id = id;
 		this.login = login;
@@ -35,11 +35,11 @@ public class User{
 		this.isConnected = false;
 	}
 	
-	public long getId() {
+	public int getId() {
 		return id;
 	}
 
-	public void setId(long id) {
+	public void setId(int id) {
 		this.id = id;
 	}
 

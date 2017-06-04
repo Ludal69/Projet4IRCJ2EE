@@ -117,7 +117,7 @@ public class UserDao extends AbstractDao{
 
             while (resultSet.next()) {
                 User user = new User();
-                user.setId(resultSet.getLong("user_id"));
+                user.setId(resultSet.getInt("user_id"));
                 user.setLogin(resultSet.getString("login"));
                 user.setEmail(resultSet.getString("email"));
                 user.setFirstName(resultSet.getString("firstname"));
