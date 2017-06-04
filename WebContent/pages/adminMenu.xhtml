@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+<ui:composition template="../templates/onlyFooterTemplate.xhtml">
+
+	
+	<ui:define name="corebody">
+		<h:form>
+			<h:commandButton action="adminUsers.xhtml" value="Admin Users" class="menuButton"
+				style="background-color:orange; margin-top: 20px;margin-left: 75px;" />
+			<h:commandButton action="adminRecipes.xhtml" value="Admin Recipes" class="menuButton"
+				style="background-color:blue; margin-top: 20px;margin-left: 75px;" />
+		</h:form>
+	</ui:define>
+</ui:composition>	
+</html>

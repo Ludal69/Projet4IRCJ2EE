@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+<ui:composition template="../templates/MyTemplate.xhtml">
+
+	<ui:define name="corebody">
+	
+		<h:form id="createRecipe" name="createRecipe">
+			<h1>Create recipe</h1>
+			<p:panelGrid>
+				 <f:facet name="header">  
+		            <p:row>  
+		                <p:column style="font-weight: bold;">Recipe's name</p:column>  
+		                <p:column style="font-weight: bold;">Duration</p:column> 
+		                <p:column style="font-weight: bold;">Level</p:column>  
+		                <p:column style="font-weight: bold;">Number of people</p:column>  
+		                <p:column style="font-weight: bold;">Type</p:column> 
+		            </p:row>
+		    	</f:facet>
+				<p:row>  
+				    <p:column>  
+				    	<p:inputText value="#{recipesDaoControler.recipeToAdd.name}"/>  
+					</p:column>
+					<p:column>  
+				    	<p:inputText value="#{recipesDaoControler.recipeToAdd.duration}"/>  
+					</p:column>
+					<p:column>  
+				    	<p:inputText value="#{recipesDaoControler.recipeToAdd.level}"/>  
+					</p:column>
+					<p:column>  
+				    	<p:inputText value="#{recipesDaoControler.recipeToAdd.numberPeople}"/>  
+					</p:column>
+					<p:column>  
+				    	<p:selectOneMenu id="console" value="#{recipesDaoControler.recipeToAdd.type}" style="width:125px">
+				            <f:selectItem itemLabel="Dessert" itemValue="Dessert" />
+				            <f:selectItem itemLabel="Meal" itemValue="Meal" />
+				            <f:selectItem itemLabel="Fish" itemValue="Fish" />
+				        </p:selectOneMenu>  
+					</p:column>
+				</p:row>  
+			</p:panelGrid>
+			
+			<p:commandButton action="#{recipesDaoControler.addRecipe()}"
+					value="Create recipe" process="createRecipe" ajax="false"/>
+		</h:form>
+		
+		<br></br>
+		
+		
+		<h:form id="results">
+			<h1>Recipes List</h1>
+			<p:dataTable var="recipe" value="#{recipesDaoControler.getAllRecipes()}">
+				<p:column headerText="Name">
+					<h:outputText value="#{recipe.name}" />
+				</p:column>
+
+				<p:column headerText="Duration">
+					<h:outputText value="#{recipe.duration}" />
+				</p:column>
+
+				<p:column headerText="Level">
+					<h:outputText value="#{recipe.level}" />
+				</p:column>
+
+				<p:column headerText="NumberPeople">
+					<h:outputText value="#{recipe.numberPeople}" />
+				</p:column>
+				<p:column headerText="Type">
+					<h:outputText value="#{recipe.type}" />
+				</p:column>
+			</p:dataTable>
+		</h:form>
+	</ui:define>
+
+</ui:composition>
+</html>

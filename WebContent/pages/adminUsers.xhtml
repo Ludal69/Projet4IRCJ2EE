@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+<ui:composition template="../templates/template_flo.xhtml">
+
+	<ui:define name="corebody">
+		<h:form id="deleteUser">
+			<p:outputLabel value="ID of the user to delete :"/>
+			<p:inputText value="#{userDaoControler.userIdToDelete}"/>
+			<p:commandButton action="#{userDaoControler.removeUser()}" 
+				value="Delete" ajax="false"/>	
+		</h:form>
+		
+		<br> </br>
+		
+		<h:form id="datagrid">
+			<p:dataTable var="user" value="#{userDaoControler.getAllUsers()}"
+				id="userList">
+				<p:column headerText="id">
+					<h:outputText value="#{user.id}" />
+				</p:column>
+				<p:column headerText="login">
+					<h:outputText value="#{user.login}" />
+				</p:column>
+				<p:column headerText="email">
+					<h:outputText value="#{user.email}" />
+				</p:column>
+				<p:column headerText="first name">
+					<h:outputText value="#{user.firstName}" />
+				</p:column>
+				<p:column headerText="last name">
+					<h:outputText value="#{user.lastName}" />
+				</p:column>
+				<p:column headerText="age">
+					<h:outputText value="#{user.age}" />
+				</p:column>
+			</p:dataTable>
+		</h:form>
+ 	</ui:define>
+ 	
+</ui:composition>
+</html>
+
+
+
