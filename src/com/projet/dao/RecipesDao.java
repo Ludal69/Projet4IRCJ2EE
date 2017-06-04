@@ -108,7 +108,7 @@ public class RecipesDao extends AbstractDao {
 
             // Cr�ation du contenu de la requ�te a �x�cuter
 //            String sql = "SELECT * FROM `recipe`";
-            String sql = "SELECT `duration` FROM `recipe` ORDER BY `duration` ASC";
+            String sql = "SELECT DISTINCT `duration` FROM `recipe` ORDER BY `duration` ASC";
             
             // Ex�cution de la requ�te de modification
             // query.executeUpdate(sql);
