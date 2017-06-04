@@ -8,10 +8,10 @@
 
 	<ui:define name="corebody">
 		<h:form id="deleteUser">
-			<span>ID of the user to delete :</span><p:inputText blinding="#{user_id}"/>
-			<p:commandButton action="#{userDaoControler.removeUser(user_id.value)}" 
-				value="Delete" ajax="false" process="deleteUser"/>
-				<f:param name="action" value="user_id"/>
+			<p:outputLabel value="ID of the user to delete :"/>
+			<p:inputText value="#{userDaoControler.userIdToDelete}"/>
+			<p:commandButton action="#{userDaoControler.removeUser()}" 
+				value="Delete" ajax="false"/>	
 		</h:form>
 		
 		<br> </br>

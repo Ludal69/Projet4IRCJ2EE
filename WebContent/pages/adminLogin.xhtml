@@ -4,13 +4,45 @@
 	xmlns:f="http://java.sun.com/jsf/core"
 	xmlns:ui="http://java.sun.com/jsf/facelets"
 	xmlns:p="http://primefaces.org/ui">
-<ui:composition template="../templates/MyTemplate.xhtml">
+<ui:composition template="../templates/onlyFooterTemplate.xhtml">
 
-	<ui:define name="corebody">
-		<h:form>
-		
+	<ui:define name="corebody" onload="PF('dlg').show();">
+		<h:form >            
+		    <h:outputLink value="javascript:void(0)" onclick="PF('dlg').show();" title="login">
+		        <img alt="Login" src="../ressources/images/login.png" style="width: 75px;height: 75px;" />
+		    </h:outputLink>
+		 
+		    <p:growl id="growl" sticky="true" showDetail="true" life="3000" />
+		 
+		    <p:dialog header="Login" widgetVar="dlg" resizable="false">
+		        <h:panelGrid columns="2" cellpadding="5">
+		            <h:outputLabel for="login" value="login:" />
+		            <p:inputText id="login" value="#{adminLoginControler.login}" required="true" label="login" />
+		 
+		            <h:outputLabel for="password" value="Password:" />
+		            <p:password id="password" value="#{adminLoginControler.password}" required="true" label="password" />
+		 
+		            <f:facet name="footer">
+		                <p:commandButton value="Login" update="growl" actionListener="#{adminLoginControler.login}"
+		                                 oncomplete="handleLoginRequest(xhr, status, args)" />
+		            </f:facet>  
+		        </h:panelGrid>
+		    </p:dialog>
 		</h:form>
+		 
+		<script type="text/javascript">
+		    function handleLoginRequest(xhr, status, args) {
+		        if(args.validationFailed || !args.loggedIn) {
+		            PF('dlg').jq.effect("shake", {times:5}, 100);
+		        }
+		        else {
+		            PF('dlg').hide();
+		            $('#loginLink').fadeOut();
+		            window.location.href = "adminMenu.xhtml";
+		        }
+		    }
+		</script>
+		
 	</ui:define>
-
 </ui:composition>
 </html>
