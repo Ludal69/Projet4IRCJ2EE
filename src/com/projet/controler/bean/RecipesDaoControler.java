@@ -8,6 +8,7 @@ import java.util.List;
 
 import javax.faces.bean.ApplicationScoped;
 import javax.faces.bean.ManagedBean;
+import javax.faces.bean.RequestScoped;
 import javax.faces.bean.SessionScoped;
 import javax.faces.bean.ViewScoped;
 
@@ -15,7 +16,7 @@ import com.projet.dao.RecipesDao;
 import com.projet.model.bean.Recipe;
 
 @ManagedBean
-@SessionScoped
+@RequestScoped
 public class RecipesDaoControler implements Serializable {
     /**
 	 * 
@@ -25,6 +26,7 @@ public class RecipesDaoControler implements Serializable {
     private List<Recipe> recipes;
     private List<Integer> durations;
     private List<String> types;
+    private Recipe recipeToAdd;
     
     
     private int durationWanted;
@@ -39,6 +41,7 @@ public class RecipesDaoControler implements Serializable {
         this.recipes = new ArrayList<Recipe>();
         this.durations = new ArrayList<Integer>();
         this.types = new ArrayList<String>();
+        this.recipeToAdd = new Recipe();
 //        durations.add(22);
 //        durations.add(55);
 //        durations.add(15);
@@ -85,6 +88,16 @@ public class RecipesDaoControler implements Serializable {
         return recipe;
     }
 
+    
+    public String deleteRecepie(String recepieName){
+    	this.recipesDao.deleteRecipe(recepieName);
+    	return "adminRecipes.xhtml";
+    }
+    
+    public String addRecipe(){
+    	this.recipesDao.addRecipe(this.recipeToAdd);
+    	return "adminRecipes.xhtml";
+    }
     
     
     public RecipesDao getRecipesDao() {
@@ -166,5 +179,20 @@ public class RecipesDaoControler implements Serializable {
     public void setTypes(List<String> types) {
         this.types = types;
     }
+
+
+
+	public Recipe getRecipeToAdd() {
+		return recipeToAdd;
+	}
+
+
+
+	public void setRecipeToAdd(Recipe recipeToAdd) {
+		this.recipeToAdd = recipeToAdd;
+	}
+    
+    
+    
 
 }

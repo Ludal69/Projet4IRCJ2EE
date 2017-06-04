@@ -128,8 +128,54 @@ public class RecipesDao extends AbstractDao {
         } catch (SQLException e) {
             e.printStackTrace();
         }
-        
-
         return durations;
+    }
+    
+    public void deleteRecipe(String recipeName){
+    	try {
+			java.sql.Connection cnx = java.sql.DriverManager.getConnection(
+					this.DB_CONFIG, this.DB_LOGIN, this.DB_PWD);
+			// Cr�ation de la requ�te
+			java.sql.Statement query = cnx.createStatement();
+
+			// Cr�ation du contenu de la requ�te a �x�cuter
+			String sql = "DELETE FROM `recipe` WHERE `name` LIKE '"+recipeName+"';";
+			
+
+			// Ex�cution de la requ�te de modification
+			query.executeUpdate(sql);
+
+//			cnx.commit();
+			query.close();
+			cnx.close();
+
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+    }
+    
+    
+    public void addRecipe(Recipe recipe){
+    	try {
+			java.sql.Connection cnx = java.sql.DriverManager.getConnection(
+					this.DB_CONFIG, this.DB_LOGIN, this.DB_PWD);
+			// Cr�ation de la requ�te
+			java.sql.Statement query = cnx.createStatement();
+
+			// Cr�ation du contenu de la requ�te a �x�cuter
+			String sql = "INSERT INTO `"+this.DB_TABLE_NAME+"`.`recipe` (`name`,`duration`,`level`,`number_people`,`type`)"
+					+ " VALUES ('"+recipe.getName()+"','"+recipe.getDuration()+"','"+recipe.getLevel()+"','"+recipe.getNumberPeople()+"','"+recipe.getType()+"');";
+			
+
+			// Ex�cution de la requ�te de modification
+			query.executeUpdate(sql);
+
+//			cnx.commit();
+			query.close();
+			cnx.close();
+
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
     }
 }

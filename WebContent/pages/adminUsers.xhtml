@@ -7,12 +7,15 @@
 <ui:composition template="../templates/template_flo.xhtml">
 
 	<ui:define name="corebody">
-		<h:form>
-			<span>ID of the user to delete :</span><p:inputText id="user_id" value="#{userDaoControler.user.id}"/>
-			<p:commandButton action="#{userDaoControler.removeUser()}"
-				value="Delete" />
-			<br> </br>
+		<h:form id="deleteUser">
+			<span>ID of the user to delete :</span><p:inputText blinding="#{user_id}"/>
+			<p:commandButton action="#{userDaoControler.removeUser(user_id.value)}" 
+				value="Delete" ajax="false" process="deleteUser"/>
+				<f:param name="action" value="user_id"/>
 		</h:form>
+		
+		<br> </br>
+		
 		<h:form id="datagrid">
 			<p:dataTable var="user" value="#{userDaoControler.getAllUsers()}"
 				id="userList">

@@ -27,7 +27,7 @@ public class UserDaoControler implements Serializable {
     }
     
     public String removeUser(long id){
-    	this.userDao.removeUser(this.user.getId());
+    	this.userDao.removeUser(id);
     	return "adminUsers.xhtml";
     }
     
