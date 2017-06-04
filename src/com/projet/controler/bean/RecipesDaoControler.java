@@ -69,7 +69,7 @@ public class RecipesDaoControler implements Serializable {
 
     public String searchRecipe() {
         this.recipes =  this.recipesDao.searchRecipe(getDurationWanted(), getLevel(), getNumberPeople(), getType());
-        return "searchResults.jsf";
+        return "searchResults.xhtml";
     }
 
     // TEST
